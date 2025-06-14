@@ -31,3 +31,29 @@ const menuToggle = document.getElementById('menu-toggle');
 menuToggle.addEventListener('click', () => {
   document.querySelector('nav').classList.toggle('open');
 });
+
+
+// Envio do formulário para Google Sheets via Apps Script
+const contatoForm = document.getElementById('contato-form');
+contatoForm.addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(contatoForm);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzTVqej6HfzmPQlke-948sN8_uvjW55H09baZtYNhkdynenOfCtvXQw1JK2fGI-nKvD/exec', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      document.getElementById('mensagem-sucesso').style.display = 'block';
+      contatoForm.reset();
+    } else {
+      alert('Erro ao enviar. Tente novamente.');
+    }
+  } catch (err) {
+    alert('Falha na conexão.');
+  }
+});
