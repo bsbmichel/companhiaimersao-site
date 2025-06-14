@@ -1,90 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Companhia Imersão</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(to right, #000, #FFB400);
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header h1 {
-      font-size: 3em;
-      color: #fff;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #fff9;
-    }
-    nav {
-      background: #111;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: #FFB400;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h2 {
-      color: #FFB400;
-      margin-bottom: 20px;
-    }
-    .button {
-      display: inline-block;
-      background-color: #FFB400;
-      color: black;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      background-color: #111;
-      color: #999;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9em;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-      header p {
-        font-size: 1em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
@@ -93,6 +15,7 @@
   </header>
 
   <nav>
+    <div id="menu-toggle"><i class="fas fa-bars"></i></div>
     <a href="#sobre">Quem Somos</a>
     <a href="#servicos">Serviços</a>
     <a href="#galeria">Galeria</a>
@@ -123,21 +46,34 @@
   <section id="galeria">
     <h2>Galeria</h2>
     <div class="gallery">
-      <img src="images/michael.png/600x400?text=Michael+Jackson" alt="Michael Jackson">
-      <img src="images/Bruno.png/600x400?text=Bruno+Mars" alt="Bruno Mars">
-      <img src="images/MarilynMonroe.png/600x400?text=Marilyn+Monroe" alt="Marilyn Monroe">
-      <img src="images/Curinga.png/600x400?text=Curinga" alt="Curinga">
+      <img src="images/michael.png" alt="Michael Jackson">
+      <img src="images/bruno.png" alt="Bruno Mars">
+      <img src="images/marilynmonroe.png" alt="Marilyn Monroe">
+      <img src="images/curinga.png" alt="Curinga">
     </div>
   </section>
 
   <section id="contato">
     <h2>Contato</h2>
     <p>Fale conosco para agendar apresentações e obter pacotes personalizados.</p>
-    <a class="button" href="https://wa.me/5561999172077" target="_blank">WhatsApp</a>
+    <form id="contato-form" action="https://formsubmit.co/contato@companhiaimersao.com.br" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_cc" value="contato@companhiaimersao.com.br">
+      <input type="hidden" name="_next" value="https://www.companhiaimersao.com.br?sucesso=true">
+
+      <button class="button" type="submit">Enviar</button>
+    </form>
+    <p id="mensagem-sucesso" style="color: #0f0; display: none; margin-top: 10px;">Mensagem enviada com sucesso!</p>
   </section>
 
   <footer>
-    <p>&copy; 2024 Companhia Imersão | Produção Cultural - Brasília‑DF</p>
+    <p>&copy; 2025 Companhia Imersão | Produção Cultural - Brasília‑DF</p>
   </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
