@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -53,27 +52,25 @@
     </div>
   </section>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Fale conosco para agendar apresentações e obter pacotes personalizados.</p>
-    <form id="contato-form" action="https://formsubmit.co/contato@companhiaimersao.com.br" method="POST">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <input type="email" name="email" placeholder="Seu e-mail" required>
-      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+  
+<section id="contato">
+  <h2>Contato</h2>
+  <p>Fale conosco para agendar apresentações e obter pacotes personalizados.</p>
+  <form id="contato-form">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+    <button class="button" type="submit">Enviar</button>
+  </form>
+  <p id="mensagem-sucesso" style="color: #0f0; display: none; margin-top: 10px;">Mensagem enviada com sucesso!</p>
+</section>
 
-      <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_cc" value="contato@companhiaimersao.com.br">
-      <input type="hidden" name="_next" value="https://www.companhiaimersao.com.br?sucesso=true">
-
-      <button class="button" type="submit">Enviar</button>
-    </form>
-    <p id="mensagem-sucesso" style="color: #0f0; display: none; margin-top: 10px;">Mensagem enviada com sucesso!</p>
-  </section>
 
   <footer>
-    <p>&copy; 2025 Companhia Imersão | Produção Cultural - Brasília‑DF</p>
+    <p>&copy; 2024 Companhia Imersão | Produção Cultural - Brasília‑DF</p>
   </footer>
 
   <script src="scripts.js"></script>
+  <div id="lightbox"><img></div>
 </body>
 </html>
