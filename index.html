@@ -21,57 +21,81 @@
     <a href="#contato">Contato</a>
   </nav>
 
+  <!-- Sessão 'Sobre' -->
   <section id="sobre">
     <h2>Quem Somos</h2>
-    <p>
-      A Companhia Imersão é uma empresa de produção cultural sediada em Brasília‑DF, especializada na criação e realização de performances temáticas com personagens icônicos da cultura pop, como Michael Jackson, Freddie Mercury, Bruno Mars, Marilyn Monroe, entre outros.
-    </p>
-    <p>
-      Nossos espetáculos são planejados com alto padrão artístico, incluindo figurinos, coreografias e direção cênica profissional. Atendemos eventos sociais, corporativos e culturais, entregando experiências impactantes e inesquecíveis.
-    </p>
+    <p>A Companhia Imersão é uma empresa de produção cultural sediada em Brasília‑DF, especializada na criação e realização de performances temáticas com personagens icônicos da cultura pop.</p>
+    <p>Nossos espetáculos são planejados com alto padrão artístico, atendendo eventos sociais, corporativos e culturais.</p>
   </section>
 
+  <!-- Sessão 'Serviços' -->
   <section id="servicos">
     <h2>Serviços</h2>
     <ul>
-      <li><strong>Show Solo:</strong> 1 personagem, 30 minutos de apresentação</li>
-      <li><strong>Combo Imersão:</strong> 3 personagens com coreografias especiais</li>
-      <li><strong>Surpresa Temática:</strong> entrada triunfal com personagem escolhido</li>
-      <li><strong>Show Premium:</strong> espetáculo personalizado com roteiro e efeitos</li>
+      <li><strong>Show Solo:</strong> 1 personagem, 30 minutos</li>
+      <li><strong>Combo Imersão:</strong> 3 personagens</li>
+      <li><strong>Surpresa Temática:</strong> entrada surpresa</li>
+      <li><strong>Show Premium:</strong> roteiro personalizado</li>
     </ul>
     <a class="button" href="https://linktr.ee/companhiaimersao" target="_blank">Solicitar Orçamento</a>
   </section>
 
+  <!-- Sessão 'Galeria' -->
   <section id="galeria">
     <h2>Galeria</h2>
     <div class="gallery">
       <img src="images/michael.png" alt="Michael Jackson">
-      <img src="images/Bruno.png" alt="Bruno Mars">
-      <img src="images/MarilynMonroe.png" alt="Marilyn Monroe">
-      <img src="images/Curinga.png" alt="Curinga">
+      <img src="images/bruno.png" alt="Bruno Mars">
+      <img src="images/marilynmonroe.png" alt="Marilyn Monroe">
+      <img src="images/curinga.png" alt="Curinga">
     </div>
   </section>
 
-  
-<section id="contato">
-  <h2>Contato</h2>
-  <p>Fale conosco para agendar apresentações e obter pacotes personalizados.</p>
-  <form id="contato-form">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu e-mail" required>
-    <input type="tel" name="telefone" placeholder="Seu telefone" required>
-    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
-    <button class="button" type="submit">Enviar</button>
-  </form>
-  <p id="mensagem-sucesso" style="color: #0f0; display: none; margin-top: 10px;">Mensagem enviada com sucesso!</p>
-</section>
+  <!-- Sessão 'Contato' com formulário + iframe -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Fale conosco para agendar apresentações e obter pacotes personalizados.</p>
 
+    <!-- iFrame oculto recebe resposta sem recarregar a página -->
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+    <form id="contato-form"
+          method="post"
+          action="https://script.google.com/macros/s/AKfycbw0lf9w9d5s7tQOQJ-MJE7KqVOfhyqQPwdSJw4sKPM/exec"
+          target="hidden_iframe"
+          onsubmit="submitted=true;">
+
+      <input type="text"  name="nome"     placeholder="Seu nome"     required>
+      <input type="email" name="email"    placeholder="Seu e‑mail"    required>
+      <input type="tel"   name="telefone" placeholder="Seu telefone"   required>
+      <textarea         name="mensagem"  placeholder="Sua mensagem"  required></textarea>
+
+      <button type="submit" class="button">Enviar</button>
+    </form>
+
+    <!-- Mensagem de sucesso fica oculta e é exibida após envio -->
+    <p id="mensagem-sucesso" style="color:#0f0; display:none; margin-top:10px">
+      Mensagem enviada com sucesso!
+    </p>
+  </section>
 
   <footer>
-    <p>&copy; 2024 Companhia Imersão | Produção Cultural - Brasília‑DF</p>
+    <p>&copy; 2024 Companhia Imersão | Produção Cultural – Brasília-DF</p>
   </footer>
 
   <script src="scripts.js"></script>
-  <div id="lightbox"><img></div>
+
+  <script>
+    // Controla exibição da mensagem após envio via iFrame
+    let submitted = false;
+    window.onfocus = function() {
+      if (submitted) {
+        document.getElementById('mensagem-sucesso').style.display = 'block';
+        document.getElementById('contato-form').reset();
+        submitted = false;
+      }
+    };
+  </script>
+
 </body>
 </html>
