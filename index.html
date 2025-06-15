@@ -14,7 +14,6 @@
   </header>
 
   <nav>
-    <!-- Menu mobile com ícone -->
     <div id="menu-toggle"><i class="fas fa-bars"></i></div>
     <a href="#sobre">Quem Somos</a>
     <a href="#servicos">Serviços</a>
@@ -43,9 +42,9 @@
     <h2>Galeria</h2>
     <div class="gallery">
       <img src="images/michael.png" alt="Michael Jackson">
-      <img src="images/Bruno.png" alt="Bruno Mars">
-      <img src="images/MarilynMonroe.png" alt="Marilyn Monroe">
-      <img src="images/Curinga.png" alt="Curinga">
+      <img src="images/bruno.png" alt="Bruno Mars">
+      <img src="images/marilynmonroe.png" alt="Marilyn Monroe">
+      <img src="images/curinga.png" alt="Curinga">
     </div>
   </section>
 
@@ -53,24 +52,22 @@
     <h2>Contato</h2>
     <p>Agende apresentações ou obtenha pacotes personalizados.</p>
 
-    <!-- iframe invisível para submissão sem recarregar -->
+    <!-- iFrame invisível para envio sem recarregar -->
     <iframe name="hidden_iframe" style="display:none;"></iframe>
 
     <form id="contato-form"
           method="post"
           action="https://script.google.com/macros/s/AKfycbyA7TOKl-lkOMXQ3jAUrCjaUmnB4XzI39IJqWa1Pde0RDV0k7wNvb3Lq7PNty7_ZJeq/exec"
-          target="hidden_iframe"
-          onsubmit="submitted=true;">
+          target="hidden_iframe">
 
       <input type="text"  name="nome"     placeholder="Seu nome"     required>
       <input type="email" name="email"    placeholder="Seu e‑mail"    required>
       <input type="tel"   name="telefone" placeholder="Seu telefone"   required>
-      <textarea         name="mensagem"  placeholder="Sua mensagem"  required></textarea>
+      <textarea         name="mensagem"  placeholder="Sua mensagem" required></textarea>
 
       <button type="submit" class="button">Enviar</button>
     </form>
 
-    <!-- mensagem exibida após o envio -->
     <p id="mensagem-sucesso" style="color:#0f0; display:none; margin-top:10px">
       Mensagem enviada com sucesso!
     </p>
@@ -80,19 +77,7 @@
     <p>&copy; 2024 Companhia Imersão | Produção Cultural – Brasília‑DF</p>
   </footer>
 
+  <!-- Conecta ao JavaScript externo -->
   <script src="scripts.js"></script>
-
-  <!-- Script para exibir mensagem após o iframe terminar -->
-  <script>
-    let submitted = false;
-    window.onfocus = function() {
-      if (submitted) {
-        document.getElementById('mensagem-sucesso').style.display = 'block';
-        document.getElementById('contato-form').reset();
-        submitted = false;
-      }
-    };
-  </script>
-
 </body>
 </html>
