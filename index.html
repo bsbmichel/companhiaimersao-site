@@ -14,6 +14,7 @@
   </header>
 
   <nav>
+    <!-- Menu mobile com ícone -->
     <div id="menu-toggle"><i class="fas fa-bars"></i></div>
     <a href="#sobre">Quem Somos</a>
     <a href="#servicos">Serviços</a>
@@ -21,17 +22,38 @@
     <a href="#contato">Contato</a>
   </nav>
 
-  <!-- Sessões de conteúdo -->
-  <section id="sobre">...</section>
-  <section id="servicos">...</section>
-  <section id="galeria">...</section>
+  <section id="sobre">
+    <h2>Quem Somos</h2>
+    <p>Empresa de produção cultural em Brasília‑DF, com performances temáticas de cultura pop.</p>
+    <p>Espetáculos artísticos com qualidade, atendendo eventos sociais, corporativos e culturais.</p>
+  </section>
 
-  <!-- Sessão Contato: envio via formulário + iframe -->
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <ul>
+      <li><strong>Show Solo:</strong> 1 personagem – 30 minutos</li>
+      <li><strong>Combo Imersão:</strong> 3 personagens</li>
+      <li><strong>Surpresa Temática:</strong> entrada surpresa</li>
+      <li><strong>Show Premium:</strong> roteiro completo</li>
+    </ul>
+    <a class="button" href="https://linktr.ee/companhiaimersao" target="_blank">Solicitar Orçamento</a>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria</h2>
+    <div class="gallery">
+      <img src="images/michael.png" alt="Michael Jackson">
+      <img src="images/Bruno.png" alt="Bruno Mars">
+      <img src="images/MarilynMonroe.png" alt="Marilyn Monroe">
+      <img src="images/Curinga.png" alt="Curinga">
+    </div>
+  </section>
+
   <section id="contato">
     <h2>Contato</h2>
     <p>Agende apresentações ou obtenha pacotes personalizados.</p>
 
-    <!-- iFrame oculto para resposta do Apps Script sem recarregar -->
+    <!-- iframe invisível para submissão sem recarregar -->
     <iframe name="hidden_iframe" style="display:none;"></iframe>
 
     <form id="contato-form"
@@ -43,24 +65,24 @@
       <input type="text"  name="nome"     placeholder="Seu nome"     required>
       <input type="email" name="email"    placeholder="Seu e‑mail"    required>
       <input type="tel"   name="telefone" placeholder="Seu telefone"   required>
-      <textarea         name="mensagem"  placeholder="Sua mensagem" required></textarea>
+      <textarea         name="mensagem"  placeholder="Sua mensagem"  required></textarea>
 
       <button type="submit" class="button">Enviar</button>
     </form>
 
-    <!-- Mensagem de confirmação -->
+    <!-- mensagem exibida após o envio -->
     <p id="mensagem-sucesso" style="color:#0f0; display:none; margin-top:10px">
       Mensagem enviada com sucesso!
     </p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Companhia Imersão | Produção Cultural – Brasília‑DF</p>
+    <p>&copy; 2024 Companhia Imersão | Produção Cultural – Brasília‑DF</p>
   </footer>
 
   <script src="scripts.js"></script>
 
-  <!-- Script para exibir mensagem após envio -->
+  <!-- Script para exibir mensagem após o iframe terminar -->
   <script>
     let submitted = false;
     window.onfocus = function() {
@@ -71,5 +93,6 @@
       }
     };
   </script>
+
 </body>
 </html>
