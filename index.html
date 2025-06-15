@@ -21,42 +21,17 @@
     <a href="#contato">Contato</a>
   </nav>
 
-  <!-- Sessão 'Sobre' -->
-  <section id="sobre">
-    <h2>Quem Somos</h2>
-    <p>A Companhia Imersão é uma empresa de produção cultural sediada em Brasília‑DF, especializada na criação e realização de performances temáticas com personagens icônicos da cultura pop.</p>
-    <p>Nossos espetáculos são planejados com alto padrão artístico, atendendo eventos sociais, corporativos e culturais.</p>
-  </section>
+  <!-- Sessões de conteúdo -->
+  <section id="sobre">...</section>
+  <section id="servicos">...</section>
+  <section id="galeria">...</section>
 
-  <!-- Sessão 'Serviços' -->
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <ul>
-      <li><strong>Show Solo:</strong> 1 personagem, 30 minutos</li>
-      <li><strong>Combo Imersão:</strong> 3 personagens</li>
-      <li><strong>Surpresa Temática:</strong> entrada surpresa</li>
-      <li><strong>Show Premium:</strong> roteiro personalizado</li>
-    </ul>
-    <a class="button" href="https://linktr.ee/companhiaimersao" target="_blank">Solicitar Orçamento</a>
-  </section>
-
-  <!-- Sessão 'Galeria' -->
-  <section id="galeria">
-    <h2>Galeria</h2>
-    <div class="gallery">
-      <img src="images/michael.png" alt="Michael Jackson">
-      <img src="images/bruno.png" alt="Bruno Mars">
-      <img src="images/marilynmonroe.png" alt="Marilyn Monroe">
-      <img src="images/curinga.png" alt="Curinga">
-    </div>
-  </section>
-
-  <!-- Sessão 'Contato' com formulário + iframe -->
+  <!-- Sessão Contato: envio via formulário + iframe -->
   <section id="contato">
     <h2>Contato</h2>
-    <p>Fale conosco para agendar apresentações e obter pacotes personalizados.</p>
+    <p>Agende apresentações ou obtenha pacotes personalizados.</p>
 
-    <!-- iFrame oculto recebe resposta sem recarregar a página -->
+    <!-- iFrame oculto para resposta do Apps Script sem recarregar -->
     <iframe name="hidden_iframe" style="display:none;"></iframe>
 
     <form id="contato-form"
@@ -68,25 +43,25 @@
       <input type="text"  name="nome"     placeholder="Seu nome"     required>
       <input type="email" name="email"    placeholder="Seu e‑mail"    required>
       <input type="tel"   name="telefone" placeholder="Seu telefone"   required>
-      <textarea         name="mensagem"  placeholder="Sua mensagem"  required></textarea>
+      <textarea         name="mensagem"  placeholder="Sua mensagem" required></textarea>
 
       <button type="submit" class="button">Enviar</button>
     </form>
 
-    <!-- Mensagem de sucesso fica oculta e é exibida após envio -->
+    <!-- Mensagem de confirmação -->
     <p id="mensagem-sucesso" style="color:#0f0; display:none; margin-top:10px">
       Mensagem enviada com sucesso!
     </p>
   </section>
 
   <footer>
-    <p>&copy; 2024 Companhia Imersão | Produção Cultural – Brasília-DF</p>
+    <p>&copy; 2025 Companhia Imersão | Produção Cultural – Brasília‑DF</p>
   </footer>
 
   <script src="scripts.js"></script>
 
+  <!-- Script para exibir mensagem após envio -->
   <script>
-    // Controla exibição da mensagem após envio via iFrame
     let submitted = false;
     window.onfocus = function() {
       if (submitted) {
@@ -96,6 +71,5 @@
       }
     };
   </script>
-
 </body>
 </html>
