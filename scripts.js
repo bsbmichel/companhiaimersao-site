@@ -1,4 +1,4 @@
-// 1️⃣ Rolagem suave para os links do menu (scroll smooth)
+// 1️⃣ Rolagem suave ao clicar nos links do menu
 const links = document.querySelectorAll('nav a');
 links.forEach(link => {
   link.addEventListener('click', e => {
@@ -8,7 +8,7 @@ links.forEach(link => {
   });
 });
 
-// 2️⃣ Animação fade-in nas seções ao rolar
+// 2️⃣ Animação "fade-in" das seções ao rolar a página
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -17,32 +17,42 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
+
 document.querySelectorAll('section').forEach(section => {
   section.classList.add('hidden');
   observer.observe(section);
 });
 
-// 3️⃣ Menu mobile com ícone hambúrguer para abrir/fechar
+// 3️⃣ Menu mobile com botão "hambúrguer" para abrir/fechar
 document.getElementById('menu-toggle').addEventListener('click', () => {
   document.querySelector('nav').classList.toggle('open');
 });
 
-// 4️⃣ Validação e envio do formulário com feedback
+// 4️⃣ Validação do formulário e envio via iframe
+
+// Seleciona o formulário e o iframe escondido
 const contatoForm = document.getElementById('contato-form');
+const iframe = document.getElementById('hidden_iframe');
+
+// Flags para controle de submissão
+let submitted = false;
+
+// Adiciona evento ao formulário para validar os campos antes do envio
 contatoForm.addEventListener('submit', function(e) {
-  // Validação antes do envio
   const nome = contatoForm.nome.value.trim();
   const email = contatoForm.email.value.trim();
   const telefone = contatoForm.telefone.value.trim();
   const mensagem = contatoForm.mensagem.value.trim();
 
+  // Expressões regulares para validação
   const nomeValido = /^[A-Za-zÀ-ú\s]+$/;
   const telefoneValido = /^[0-9]+$/;
   const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  // Validações com alertas específicos
   if (!nomeValido.test(nome)) {
     alert("Digite apenas letras no campo Nome.");
-    e.preventDefault();
+    e.preventDefault(); // impede envio se inválido
     return;
   }
   if (!telefoneValido.test(telefone)) {
@@ -51,22 +61,23 @@ contatoForm.addEventListener('submit', function(e) {
     return;
   }
   if (!emailValido.test(email)) {
-    alert("Digite um e-mail válido.");
+    alert("Digite um e‑mail válido.");
     e.preventDefault();
     return;
   }
 
-  // Se a validação passou, o formulário será submetido pelo navegador
-  // A resposta do script no iframe será processada abaixo
+  // Se passou nas validações, define flag para futura exibição do feedback
   submitted = true;
 });
 
-// Controla quando mostrar feedback após envio via iframe
-let submitted = false;
-window.onfocus = function() {
+// Evento de load disparado quando o iframe recebe resposta do servidor
+iframe.addEventListener('load', () => {
   if (submitted) {
+    // Exibe mensagem de sucesso
     document.getElementById('mensagem-sucesso').style.display = 'block';
+    // Reseta o formulário para envio futuro
     contatoForm.reset();
+    // Redefine flag
     submitted = false;
   }
-};
+});
