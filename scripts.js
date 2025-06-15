@@ -1,16 +1,13 @@
-// JavaScript com funcionalidades completas:
-
-// 1️⃣ Rolagem suave nos links do menu (scroll smooth)
+// 1) Rolagem suave para seções do menu
 const links = document.querySelectorAll('nav a');
 links.forEach(link => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    const section = document.querySelector(this.getAttribute('href'));
-    section?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// 2️⃣ Animação de fade-in nas seções conforme o usuário rola a página
+// 2) Animação fade-in para as seções
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -19,71 +16,12 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('section').forEach(section => {
   section.classList.add('hidden');
   observer.observe(section);
 });
 
-// 3️⃣ Menu mobile com botão “hambúrguer” para abrir/fechar
-const menuToggle = document.getElementById('menu-toggle');
-menuToggle.addEventListener('click', () => {
+// 3) Menu mobile - abre e fecha
+document.getElementById('menu-toggle').addEventListener('click', () => {
   document.querySelector('nav').classList.toggle('open');
-});
-
-// 4️⃣ Envio do formulário para Google Sheets via Apps Script
-// Inclui validação, gravação no sheet, envio de e-mail e exibição de feedback
-const contatoForm = document.getElementById('contato-form');
-contatoForm.addEventListener('submit', async function (e) {
-  e.preventDefault();
-
-  // 📝 Coleta dos dados
-  const nome = contatoForm.nome.value.trim();
-  const email = contatoForm.email.value.trim();
-  const telefone = contatoForm.telefone.value.trim();
-  const mensagem = contatoForm.mensagem.value.trim();
-
-  // ✅ Validações
-  const nomeValido = /^[A-Za-zÀ-ú\s]+$/;
-  const telefoneValido = /^[0-9]+$/;
-  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!nomeValido.test(nome)) {
-    alert("Digite apenas letras no campo Nome.");
-    return;
-  }
-  if (!telefoneValido.test(telefone)) {
-    alert("Digite apenas números no campo Telefone.");
-    return;
-  }
-  if (!emailValido.test(email)) {
-    alert("Digite um e-mail válido.");
-    return;
-  }
-
-  const data = { nome, email, telefone, mensagem };
-
-  try {
-    const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbzTVqej6HfzmPQlke-948sN8_uvjW55H09baZtYNhkdynenOfCtvXQw1JK2fGI-nKvD/exec",
-      {
-        method: "POST",
-        mode: "cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      }
-    );
-
-    const text = await response.text();
-    if (response.ok && text.startsWith("OK")) {
-      document.getElementById('mensagem-sucesso').style.display = 'block';
-      contatoForm.reset();
-    } else {
-      console.error("Erro no script:", text);
-      alert("O envio falhou. Tente novamente mais tarde.");
-    }
-  } catch (err) {
-    console.error("Falha de conexão:", err);
-    alert("Erro de conexão. Verifique sua internet.");
-  }
 });
