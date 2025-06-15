@@ -69,7 +69,7 @@ contatoForm.addEventListener('submit', async function (e) {
   };
 
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbzTVqej6HfzmPQlke-948sN8_uvjW55H09baZtYNhkdynenOfCtvXQw1JK2fGI-nKvD/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbw0lf9w9d5s7tQOQJ-MJE7KqQPwdSJw4sKPM/exec', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
