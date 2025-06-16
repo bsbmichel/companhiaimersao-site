@@ -4,91 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Companhia Imersão</title>
+  <link rel="icon" href="images/logo_imersao.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Companhia Imersão</h1>
-    <p>Produção cultural com personagens icônicos para eventos inesquecíveis</p>
-  </header>
 
+<!-- Header com logo -->
+<header>
+  <a href="index.html"><img src="images/logo_imersao.png" alt="Companhia Imersão" class="logo"></a>
   <nav>
     <div id="menu-toggle"><i class="fas fa-bars"></i></div>
-    <a href="#sobre">Quem Somos</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#contato">Contato</a>
+    <a href="index.html">Home</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="contato.html">Contato</a>
   </nav>
+</header>
 
-  <section id="sobre">
-    <h2>Quem Somos</h2>
-    <p>
-      A Companhia Imersão, sediada em Brasília‑DF, é uma produtora cultural especializada em experiências imersivas únicas. Unimos teatro, dança, jogos teatrais e aventuras LARP a personagens da cultura pop, filmes, séries, desenhos, games e incluindo ícones como Michael Jackson, Freddie Mercury, Bruno Mars, Marilyn Monroe e muitos outros.
-    </p>
-    <p>
-      Também criamos personagens exclusivos sob medida para você. Todos os nossos espetáculos são desenvolvidos com padrão artístico elevado, reunindo figurinos elaborados, coreografias envolventes e direção cênica profissional.
-    </p>
-    <p>
-      Atuamos em eventos sociais, corporativos e culturais, oferecendo experiências memoráveis, impactantes e verdadeiramente inesquecíveis.
-    </p>
-  </section>
+<!-- Hero -->
+<section class="hero">
+  <div class="overlay">
+    <h1>Vivencie espetáculos imersivos inesquecíveis</h1>
+    <button class="button" onclick="location.href='contato.html'">Peça seu Orçamento</button>
+  </div>
+</section>
 
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <ul>
-      <li><strong>Show Solo:</strong> 1 personagem, 30 minutos de apresentação</li>
-      <li><strong>Combo Imersão:</strong> 3 personagens com coreografias especiais</li>
-      <li><strong>Surpresa Temática:</strong> entrada triunfal com personagem escolhido</li>
-      <li><strong>Show Premium:</strong> espetáculo personalizado com roteiro e efeitos</li>
-    </ul>
-    <a class="button" href="https://linktr.ee/companhiaimersao" target="_blank">Conheça Nossos Serviços</a>
-  </section>
+<!-- Teaser Sobre -->
+<section id="teaser-sobre">
+  <h2>Quem Somos</h2>
+  <p>Somos a Companhia Imersão de Brasília‑DF. Criamos espetáculos com teatro, dança, LARP e personagens da cultura pop.</p>
+  <a href="sobre.html" class="button small">Saiba mais</a>
+</section>
 
-  <section id="galeria">
-    <h2>Galeria</h2>
-    <div class="gallery">
-      <img src="images/michael.png" alt="Michael Jackson">
-      <img src="images/bruno.png" alt="Bruno Mars">
-      <img src="images/marilynmonroe.png" alt="Marilyn Monroe">
-      <img src="images/curinga.png" alt="Curinga">
-    </div>
-  </section>
+<!-- Teaser Serviços -->
+<section id="teaser-servicos">
+  <h2>Nossos Serviços</h2>
+  <p>Shows solo, combos, surpresas temáticas, roteiros premium e personagens sob medida.</p>
+  <a href="servicos.html" class="button small">Conheça nossos pacotes</a>
+</section>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Agende apresentações ou obtenha pacotes personalizados.</p>
+<!-- Depoimentos -->
+<section id="depoimentos">
+  <h2>O que dizem sobre nós</h2>
+  <div class="depo-card">
+    <p>“Imersão no evento da nossa empresa: simplesmente mágico!”</p>
+    <div class="autor">– Evento Corporativo XYZ</div>
+  </div>
+</section>
 
-  <!-- iframe invisível recebe resposta sem recarregar -->
-  <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
+<!-- Chamada para galerias -->
+<section id="galeria-teaser">
+  <h2>Explore nossos espetáculos</h2>
+  <a href="servicos.html#galeria" class="button small">Ver Galeria</a>
+</section>
 
-    <form id="contato-form"
-          method="post"
-          action="https://script.google.com/macros/s/AKfycbyA7TOKl-lkOMXQ3jAUrCjaUmnB4XzI39IJqWa1Pde0RDV0k7wNvb3Lq7PNty7_ZJeq/exec"
-          target="hidden_iframe">
+<!-- WhatsApp fixo -->
+<a href="https://wa.me/5591999172077" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-      <input type="text"  name="nome"     placeholder="Seu nome"     required>
-      <input type="email" name="email"    placeholder="Seu e‑mail"    required>
-      <input type="tel"   name="telefone" placeholder="Seu telefone"   required>
-      <textarea         name="mensagem"  placeholder="Sua mensagem" required></textarea>
+<!-- Footer -->
+<footer>
+  <p>
+    &copy; 2024 Companhia Imersão | Produção Cultural – Brasília‑DF · Desenvolvido por Kampello Tech · Todos os direitos reservados
+  </p>
+  <p><strong>Endereço físico:</strong><br>
+    SMLN MI Trecho 03 CS 122<br>
+    Setor de Mansões do Lago Norte – Brasília – DF<br>
+    CEP 71540‑035
+  </p>
+</footer>
 
-      <button type="submit" class="button">Enviar</button>
-    </form>
-
-    <p id="mensagem-sucesso" style="color:#0f0; display:none; margin-top:10px">
-      Mensagem enviada com sucesso!
-    </p>
-  </section>
-
-  <footer>
-    <p>
-      &copy; 2024 Companhia Imersão | Produção Cultural – Brasília/DF &middot;
-      Desenvolvido por Kampello Tech &middot;
-      Todos os direitos reservados
-    </p>
-  </footer>
-
-  <!-- Conecta ao JavaScript externo -->
-  <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
