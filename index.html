@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Companhia Imersão</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-  <!-- Banner inicial com efeito parallax -->
+
+  <!-- Banner inicial -->
   <section class="banner parallax" id="home" style="background-image: url('images/banner_home.png');">
     <div class="banner-text fade-in-on-scroll">
       <div class="overlay-text">
@@ -28,7 +29,7 @@
     <a href="#trabalhe">Trabalhe Conosco</a>
   </nav>
 
-  <!-- Sobre -->
+  <!-- Seção Sobre -->
   <section id="sobre" class="parallax content-section" style="background-image: url('images/banner_sobre.png');">
     <div class="content fade-in-on-scroll">
       <h2>Quem Somos</h2>
@@ -40,27 +41,27 @@
     </div>
   </section>
 
-  <!-- Serviços -->
+  <!-- Seção Serviços -->
   <section id="servicos" class="parallax content-section" style="background-image: url('images/banner_servicos.png');">
     <div class="content fade-in-on-scroll">
       <h2>Nossos Serviços</h2>
       <div class="texto-bg">
         <h3>Para Eventos</h3>
-      <ul>
-        <li><strong>Performasse:</strong> Nossas apresentações combinam teatro, dança, música e circo em narrativas imersivas e envolventes. Com roteiros originais e elementos cênicos impactantes, nossos espetáculos oferecem uma experiência sensorial inesquecível.</li>
-        <li><strong>Teatro Imersivo com Jogo:</strong> O público deixa de ser espectador e passa a fazer parte da história, interagindo com os personagens e influenciando os rumos da narrativa. Uma proposta inovadora, dinâmica e totalmente fora do convencional.</li>
-        <li><strong>Cortejo:</strong> Personagens cativantes circulam pelo evento, interagindo e tirando fotos com o público. Um momento lúdico e descontraído que aproxima artistas e convidados, criando memórias marcantes.</li>
-        <li><strong>Recepção Temática:</strong> Nossos personagens estará presente no início do evento, recebendo os convidados, tirando fotos e interagindo, garantindo uma experiência acolhedora e memorável.</li>
-      </ul>
-      <h3>Para Produção Cultural</h3>
-      <ul>
-        <li><strong>Produção Artística:</strong> Cuidamos de todo o processo criativo do espetáculo, da elaboração de roteiros à seleção do elenco, figurinos e direção artística. Nossa experiência garante produções com identidade, qualidade e impacto cultural.</li>
-      </ul>
-    </div>
+        <ul>
+          <li><strong>Performasse:</strong> Nossas apresentações combinam teatro, dança, música e circo em narrativas imersivas e envolventes.</li>
+          <li><strong>Teatro Imersivo com Jogo:</strong> O público deixa de ser espectador e passa a fazer parte da história, interagindo com os personagens.</li>
+          <li><strong>Cortejo:</strong> Personagens cativantes circulam pelo evento, interagindo e tirando fotos com o público.</li>
+          <li><strong>Recepção Temática:</strong> Personagens recepcionam convidados com interação e fotos, criando uma atmosfera acolhedora.</li>
+        </ul>
+        <h3>Para Produção Cultural</h3>
+        <ul>
+          <li><strong>Produção Artística:</strong> Criamos roteiros, elenco, figurinos e direção para espetáculos personalizados e de alta qualidade.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- Galeria -->
+  <!-- Seção Galeria -->
   <section id="galeria">
     <h2>Galeria</h2>
     <div class="gallery">
@@ -71,7 +72,7 @@
     </div>
   </section>
 
-  <!-- Contato -->
+  <!-- Seção Contato -->
   <section id="contato" class="parallax content-section" style="background-image: url('images/banner_contato.png');">
     <div class="content fade-in-on-scroll">
       <h2>Contato</h2>
@@ -86,14 +87,14 @@
       <p id="mensagem-sucesso" style="color:#0f0; display:none; margin-top:10px">Mensagem enviada com sucesso!</p>
     </div>
   </section>
-  
-  <!-- Trabalhe Conosco -->
+
+  <!-- Seção Trabalhe Conosco -->
   <section id="trabalhe" class="parallax content-section" style="background-image: url('images/banner_trabalhe.png');">
     <div class="content fade-in-on-scroll">
       <h2>Trabalhe Conosco</h2>
-      <h2>ENTRE NO UNIVERSO IMERSIVO!</h2>
+      <h3>Entre no Universo Imersivo!</h3>
       <p class="subtexto">Seu talento é a próxima grande cena. Dê vida ao espetáculo junto com a gente.</p>
-      <form id="form-trabalhe" method="POST" enctype="multipart/form-data" action="mailto:contato@companhiaimersao.com.br">
+      <form id="form-trabalhe" method="POST" enctype="multipart/form-data" action="https://formspree.io/f/xwpbqrwg">
         <input type="text" name="nome" placeholder="Seu nome" required>
         <input type="email" name="email" placeholder="Seu e-mail" required>
         <input type="tel" name="telefone" placeholder="Seu telefone" required>
@@ -105,6 +106,7 @@
     </div>
   </section>
 
+  <!-- Rodapé -->
   <footer>
     <p>
       &copy; 2024 Companhia Imersão | Produção Cultural – Brasília/DF &middot;
@@ -112,6 +114,7 @@
     </p>
   </footer>
 
+  <!-- Script -->
   <script src="scripts.js"></script>
 </body>
 </html>
