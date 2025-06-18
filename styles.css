@@ -12,22 +12,51 @@ body {
   line-height: 1.6;
 }
 
-/* Header principal */
-header {
-  background: linear-gradient(to right, #000, #FFB400);
-  text-align: center;
-  padding: 60px 20px;
-}
-
-header h1 {
-  font-size: 3em;
+/* Banner parallax com sobreposição escura */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
   color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  padding: 40px 20px;
 }
 
-header p {
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: #fff9;
+.parallax .content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.parallax h2 {
+  font-size: 2.5em;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 15px;
+  border-radius: 10px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.texto-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Navegação */
@@ -55,7 +84,7 @@ nav a {
 
 /* Seções gerais */
 section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   max-width: 1200px;
   margin: auto;
 }
@@ -86,15 +115,16 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  margin-top: 20px;
 }
 
 .gallery img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 
 .gallery img:hover {
@@ -152,6 +182,11 @@ textarea {
   resize: vertical;
 }
 
+input[type="file"] {
+  color: #fff;
+  padding: 10px 0;
+}
+
 form .button {
   background-color: #FFB400;
   color: #000;
@@ -170,78 +205,45 @@ form .button:hover {
   background-color: #e0a000;
 }
 
-/* Estilo para input de arquivo */
-input[type="file"] {
-  color: #fff;
-  padding: 10px 0;
-}
-
-/* Seções com imagem de fundo (parallax) */
-.parallax {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  color: #fff;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60vh;
-  padding: 20px;
-}
-
-.parallax h2 {
-  font-size: 2.5em;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  animation: fadeInUp 1.2s ease forwards;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2em;
   }
-  header p {
-    font-size: 1em;
-  }
+
   nav a {
     display: block;
     margin: 10px 0;
   }
+
   nav.open a {
     display: block;
   }
+
   #menu-toggle {
     display: block;
   }
+
   form {
     flex-direction: column;
   }
+
   input, textarea, select, form .button {
     width: 100%;
   }
 
   .parallax {
     background-attachment: scroll;
-    height: 50vh;
+    height: auto;
+    padding: 60px 20px;
   }
 
   .parallax h2 {
     font-size: 1.6em;
     padding: 10px;
+  }
+
+  .texto-bg {
+    padding: 20px;
   }
 }
