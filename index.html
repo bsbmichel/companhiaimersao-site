@@ -1,85 +1,94 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Companhia Imersão</title>
-  <link rel="icon" href="images/logo_imersao.png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-
-  <!-- Cabeçalho com logo e navegação -->
-  <header>
-    <a href="index.html">
-      <img src="images/logo_imersao.png" alt="Companhia Imersão" class="logo">
-    </a>
-    <nav>
-      <div id="menu-toggle"><i class="fas fa-bars"></i></div>
-      <a href="index.html">Home</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+  <header class="parallax" id="banner-home">
+    <div class="overlay">
+      <h1>Companhia Imersão</h1>
+      <p>Produção cultural com personagens icônicos para eventos inesquecíveis</p>
+    </div>
   </header>
 
-  <!-- Banner principal da Home -->
-  <section class="hero">
+  <nav>
+    <div id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <a href="#sobre">Quem Somos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+    <a href="#trabalhe">Trabalhe Conosco</a>
+  </nav>
+
+  <section id="sobre" class="parallax" style="background-image: url('images/banner_sobre.jpg')">
     <div class="overlay">
-      <h1>Vivencie espetáculos imersivos inesquecíveis</h1>
-      <button class="button" onclick="location.href='contato.html'">Peça seu Orçamento</button>
+      <h2>Quem Somos</h2>
+      <p>Descrição sobre a Companhia Imersão...</p>
     </div>
   </section>
 
-  <!-- Seção teaser Sobre -->
-  <section id="teaser-sobre">
-    <h2>Quem Somos</h2>
-    <p>Companhia Imersão, de Brasília‑DF. Criamos experiências imersivas com teatro, dança, LARP e personagens icônicos.</p>
-    <a href="sobre.html" class="button small">Saiba mais</a>
-  </section>
-
-  <!-- Seção teaser Serviços -->
-  <section id="teaser-servicos">
-    <h2>Nossos Serviços</h2>
-    <p>Shows solo, combos, surpresas temáticas e roteiros premium personalizados.</p>
-    <a href="servicos.html" class="button small">Conheça nossos pacotes</a>
-  </section>
-
-  <!-- Depoimento -->
-  <section id="depoimentos">
-    <h2>O que dizem sobre nós</h2>
-    <div class="depo-card">
-      <p>“Imersão no evento da nossa empresa: simplesmente mágico!”</p>
-      <div class="autor">– Evento Corporativo XYZ</div>
+  <section id="servicos" class="parallax" style="background-image: url('images/banner_servicos.jpg')">
+    <div class="overlay">
+      <h2>Serviços</h2>
+      <ul>
+        <li><strong>Show Solo:</strong> 1 personagem, 30 minutos</li>
+        <li><strong>Combo Imersão:</strong> 3 personagens</li>
+        <li><strong>Surpresa Temática:</strong> entrada especial</li>
+        <li><strong>Show Premium:</strong> espetáculo completo</li>
+      </ul>
+      <a class="button" href="https://linktr.ee/companhiaimersao" target="_blank">Conheça Nossos Serviços</a>
     </div>
   </section>
 
-  <!-- Chamada para galeria -->
-  <section id="galeria-teaser">
-    <h2>Explore nossos espetáculos</h2>
-    <a href="servicos.html#galeria" class="button small">Ver Galeria</a>
+  <section id="galeria">
+    <h2>Galeria</h2>
+    <div class="gallery">
+      <img src="images/michael.png" alt="Michael Jackson">
+      <img src="images/bruno.png" alt="Bruno Mars">
+      <img src="images/marilynmonroe.png" alt="Marilyn Monroe">
+      <img src="images/curinga.png" alt="Curinga">
+    </div>
   </section>
 
-  <!-- WhatsApp fixo com DDD 61 -->
-  <a href="https://wa.me/5561999172077" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <section id="contato" class="parallax" style="background-image: url('images/banner_contato.jpg')">
+    <div class="overlay">
+      <h2>Contato</h2>
+      <form id="contato-form" method="post" action="https://script.google.com/macros/s/AKfycbyA7TOKl-lkOMXQ3jAUrCjaUmnB4XzI39IJqWa1Pde0RDV0k7wNvb3Lq7PNty7_ZJeq/exec" target="hidden_iframe">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e‑mail" required />
+        <input type="tel" name="telefone" placeholder="Seu telefone" required />
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="button">Enviar</button>
+      </form>
+      <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
+      <p id="mensagem-sucesso">Mensagem enviada com sucesso!</p>
+    </div>
+  </section>
 
-  <!-- Rodapé com endereço e créditos -->
+  <section id="trabalhe" class="parallax" style="background-image: url('images/banner_trabalhe.jpg')">
+    <div class="overlay">
+      <h2>Trabalhe Conosco</h2>
+      <form id="form-trabalhe" method="POST" action="mailto:contato@companhiaimersao.com.br" enctype="multipart/form-data">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <input type="tel" name="telefone" placeholder="Telefone para contato" required />
+        <input type="text" name="vaga" placeholder="Vaga desejada" required />
+        <textarea name="sobre" placeholder="Conte um pouco sobre você!" required></textarea>
+        <input type="file" name="curriculo" accept=".pdf,.doc,.docx,.jpg,.png" required />
+        <button type="submit" class="button">Enviar candidatura</button>
+      </form>
+    </div>
+  </section>
+
   <footer>
-    <p>
-      &copy; 2025 Companhia Imersão | Produção Cultural – Brasília‑DF · Desenvolvido por Kampello Tech · Todos os direitos reservados
-    </p>
-    <p>
-      <strong>Endereço físico:</strong><br>
-      SMLN MI Trecho 03 CS 122<br>
-      Setor de Mansões do Lago Norte – Brasília‑DF<br>
-      CEP 71540‑035
-    </p>
+    <p>&copy; 2024 Companhia Imersão | Produção Cultural – Brasília/DF &middot; Desenvolvido por Kampello Tech &middot; Todos os direitos reservados</p>
   </footer>
 
-  <!-- Script de funcionalidades -->
   <script src="scripts.js"></script>
 </body>
 </html>
