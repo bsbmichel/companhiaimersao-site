@@ -1,50 +1,67 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Companhia Imersão</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header class="parallax" id="images/banner-home.png">
+  <!-- Banner Home -->
+  <section class="hero" style="background-image: url('images/banner_home.jpg');">
     <div class="overlay">
       <h1>Companhia Imersão</h1>
-      <p>Produção cultural com personagens icônicos para eventos inesquecíveis</p>
+      <p>Experiências artísticas que emocionam e transformam</p>
     </div>
-  </header>
+  </section>
 
+  <!-- Menu de navegação -->
   <nav>
     <div id="menu-toggle"><i class="fas fa-bars"></i></div>
     <a href="#sobre">Quem Somos</a>
     <a href="#servicos">Serviços</a>
     <a href="#galeria">Galeria</a>
-    <a href="#contato">Contato</a>
     <a href="#trabalhe">Trabalhe Conosco</a>
+    <a href="#contato">Contato</a>
   </nav>
 
-  <section id="sobre" class="parallax" style="background-image: url('images/banner_sobre.png')">
-    <div class="overlay">
+  <!-- Sobre -->
+  <section id="sobre" class="parallax" style="background-image: url('images/banner_sobre.jpg');">
+    <div class="content">
       <h2>Quem Somos</h2>
-      <p>Descrição sobre a Companhia Imersão...</p>
+      <p>
+        A Companhia Imersão, sediada em Brasília‑DF, é uma produtora cultural especializada em experiências imersivas únicas. Unimos teatro, dança, jogos teatrais e aventuras LARP a personagens da cultura pop, filmes, séries, desenhos, games e incluindo ícones como Michael Jackson, Freddie Mercury, Bruno Mars, Marilyn Monroe e muitos outros.
+      </p>
+      <p>
+        Também criamos personagens exclusivos sob medida para você. Todos os nossos espetáculos são desenvolvidos com padrão artístico elevado, reunindo figurinos elaborados, coreografias envolventes e direção cênica profissional.
+      </p>
+      <p>
+        Atuamos em eventos sociais, corporativos e culturais, oferecendo experiências memoráveis, impactantes e verdadeiramente inesquecíveis.
+      </p>
     </div>
   </section>
 
-  <section id="servicos" class="parallax" style="background-image: url('images/banner_servicos.png')">
-    <div class="overlay">
-      <h2>Serviços</h2>
+  <!-- Serviços -->
+  <section id="servicos" class="parallax" style="background-image: url('images/banner_servicos.jpg');">
+    <div class="content">
+      <h2>Nossos Serviços</h2>
+      <p>Oferecemos soluções criativas e personalizadas para eventos e produções culturais. Nossa equipe é especializada em criar experiências únicas e memoráveis para o seu público.</p>
+      <h3>Para Eventos</h3>
       <ul>
-        <li><strong>Show Solo:</strong> 1 personagem, 30 minutos</li>
-        <li><strong>Combo Imersão:</strong> 3 personagens</li>
-        <li><strong>Surpresa Temática:</strong> entrada especial</li>
-        <li><strong>Show Premium:</strong> espetáculo completo</li>
+        <li><strong>Performasse:</strong> mistura de teatro, dança, música e circo com narrativa imersiva.</li>
+        <li><strong>Teatro Imersivo com Jogo:</strong> o público interage e influencia o desfecho da história.</li>
+        <li><strong>Cortejo:</strong> personagens interagem e tiram fotos com o público.</li>
+        <li><strong>Recepção:</strong> personagens recebem convidados e criam uma experiência acolhedora.</li>
       </ul>
-      <a class="button" href="https://linktr.ee/companhiaimersao" target="_blank">Conheça Nossos Serviços</a>
+      <h3>Para Produção Cultural</h3>
+      <ul>
+        <li><strong>Produção Artística:</strong> criação completa de espetáculos com roteiro, figurino e direção.</li>
+      </ul>
     </div>
   </section>
 
+  <!-- Galeria -->
   <section id="galeria">
     <h2>Galeria</h2>
     <div class="gallery">
@@ -55,40 +72,55 @@
     </div>
   </section>
 
-  <section id="contato" class="parallax" style="background-image: url('images/banner_contato.png')">
-    <div class="overlay">
+  <!-- Trabalhe Conosco -->
+  <section id="trabalhe" class="parallax" style="background-image: url('images/banner_trabalhe.jpg');">
+    <div class="content">
+      <h2>Trabalhe Conosco</h2>
+      <p>Venha fazer parte da Companhia Imersão. Envie seu currículo e conte um pouco sobre você!</p>
+      <form action="mailto:contato@companhiaimersao.com.br" method="POST" enctype="multipart/form-data">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e‑mail" required>
+        <input type="tel" name="telefone" placeholder="Seu telefone" required>
+        <input type="text" name="vaga" placeholder="Vaga desejada" required>
+        <textarea name="sobre" placeholder="Conte um pouco sobre você" required></textarea>
+        <input type="file" name="curriculo" accept=".pdf,.doc,.docx,image/*">
+        <button type="submit" class="button">Enviar Currículo</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="parallax" style="background-image: url('images/banner_contato.jpg');">
+    <div class="content">
       <h2>Contato</h2>
+      <p>Agende apresentações ou obtenha pacotes personalizados.</p>
+      <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
       <form id="contato-form" method="post" action="https://script.google.com/macros/s/AKfycbyA7TOKl-lkOMXQ3jAUrCjaUmnB4XzI39IJqWa1Pde0RDV0k7wNvb3Lq7PNty7_ZJeq/exec" target="hidden_iframe">
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e‑mail" required />
-        <input type="tel" name="telefone" placeholder="Seu telefone" required />
+        <input type="text"  name="nome"     placeholder="Seu nome"     required>
+        <input type="email" name="email"    placeholder="Seu e‑mail"    required>
+        <input type="tel"   name="telefone" placeholder="Seu telefone"   required>
         <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
         <button type="submit" class="button">Enviar</button>
       </form>
-      <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
-      <p id="mensagem-sucesso">Mensagem enviada com sucesso!</p>
+      <p id="mensagem-sucesso" style="color:#0f0; display:none; margin-top:10px">
+        Mensagem enviada com sucesso!
+      </p>
     </div>
   </section>
 
-  <section id="trabalhe" class="parallax" style="background-image: url('images/banner_trabalhe.png')">
-    <div class="overlay">
-      <h2>Trabalhe Conosco</h2>
-      <form id="form-trabalhe" method="POST" action="mailto:contato@companhiaimersao.com.br" enctype="multipart/form-data">
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <input type="tel" name="telefone" placeholder="Telefone para contato" required />
-        <input type="text" name="vaga" placeholder="Vaga desejada" required />
-        <textarea name="sobre" placeholder="Conte um pouco sobre você!" required></textarea>
-        <input type="file" name="curriculo" accept=".pdf,.doc,.docx,.png,.png" required />
-        <button type="submit" class="button">Enviar candidatura</button>
-      </form>
-    </div>
-  </section>
-
+  <!-- Rodapé -->
   <footer>
-    <p>&copy; 2024 Companhia Imersão | Produção Cultural – Brasília/DF &middot; Desenvolvido por Kampello Tech &middot; Todos os direitos reservados</p>
+    <p>
+      &copy; 2024 Companhia Imersão | Produção Cultural – Brasília/DF &middot;
+      Desenvolvido por Kampello Tech &middot;
+      Todos os direitos reservados
+    </p>
+    <p>
+      SMLN MI Trecho 03 CS 122 – Setor de Mansões do Lago Norte – Brasília/DF – CEP: 71540-035
+    </p>
   </footer>
 
+  <!-- JavaScript -->
   <script src="scripts.js"></script>
 </body>
 </html>
