@@ -12,7 +12,7 @@
 <body>
 
   <!-- Menu de navegação -->
-  <nav>
+  <nav class="menu-fixo">
     <div id="menu-toggle"><i class="fas fa-bars"></i></div>
     <a href="#sobre">Quem Somos</a>
     <a href="#servicos">Serviços</a>
@@ -20,6 +20,7 @@
     <a href="#contato">Contato</a>
     <a href="#trabalhe">Trabalhe Conosco</a>
   </nav>
+
 
   <!-- Banner inicial -->
   <section class="banner parallax" id="home" style="background-image: url('images/banner_home.png');">
@@ -69,10 +70,10 @@
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li class="glide__slide"><a href="images/michael.png" data-lightbox="galeria"><img src="images/michael.png" alt=""></a></li>
-          <li class="glide__slide"><a href="images/bruno.png" data-lightbox="galeria"><img src="images/bruno.png" alt=""></a></li>
-          <li class="glide__slide"><a href="images/marilynmonroe.png" data-lightbox="galeria"><img src="images/marilynmonroe.png" alt=""></a></li>
-          <li class="glide__slide"><a href="images/curinga.png" data-lightbox="galeria"><img src="images/curinga.png" alt=""></a></li>
+          <li class="glide__slide"><a href="images/michael.png" data-lightbox="galeria"><img src="images/michael.png" alt="Michael Jackson"></a></li>
+          <li class="glide__slide"><a href="images/bruno.png" data-lightbox="galeria"><img src="images/bruno.png" alt="Bruno Mars"></a></li>
+          <li class="glide__slide"><a href="images/marilynmonroe.png" data-lightbox="galeria"><img src="images/marilynmonroe.png" alt="Marilyn Monroe"></a></li>
+          <li class="glide__slide"><a href="images/curinga.png" data-lightbox="galeria"><img src="images/curinga.png" alt="Curinga"></a></li>
         </ul>
       </div>
     </div>
@@ -106,7 +107,7 @@
   </section>
 
   <!-- Rodapé -->
-  <footer>
+  <footer class="rodape-elegante">
     <div class="footer-content">
       <p>&copy; 2024 <strong>Companhia Imersão</strong> | Produção Cultural – Brasília/DF</p>
       <p>Desenvolvido por <strong>Kampello Tech</strong> · Todos os direitos reservados</p>
@@ -114,10 +115,14 @@
   </footer>
 
   <!-- Ícone WhatsApp -->
-  <a href="https://wa.me/5561999172077" target="_blank" id="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/5561999172077" target="_blank" id="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <!-- Botão Topo -->
-  <button id="voltar-topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+  <button id="voltar-topo" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/scrollreveal"></script>
