@@ -1,158 +1,101 @@
-* {
-  box-sizing: border-box;
+body {
   margin: 0;
   padding: 0;
-}
-
-body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000;
-  color: #fff;
-  line-height: 1.6;
-}
-
-/* Parallax sections com fundo adaptado e responsivo */
-section.parallax {
-  background-attachment: fixed;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  background-attachment: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+  transition: background-image 0.5s ease-in-out;
 }
 
-.banner-text {
-  text-align: center;
-  z-index: 2;
+/* Responsividade para tablets e celulares */
+@media (max-width: 768px) {
+  body {
+    background-size: contain; /* Evita "estourar" */
+    background-position: top center;
+    background-attachment: scroll; /* Evita bugs no iOS */
+  }
+
+  .container {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  form, .form-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  input, textarea {
+    font-size: 16px;
+  }
+
+  .titulo-secao {
+    font-size: 24px;
+    text-align: center;
+  }
 }
 
-.overlay-text {
+/* Estilo da caixa de formulário (ajustado) */
+.form-box {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+  backdrop-filter: blur(6px);
 }
 
-h1, h2, h3 {
-  color: #FFB400;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-nav {
-  background: #111;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-}
-
-nav a {
-  color: #FFB400;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-#menu-toggle {
-  display: none;
-  color: #FFB400;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-section.content-section {
-  padding: 60px 20px;
-}
-
-.texto-bg {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 900px;
-  margin: auto;
-  text-align: justify;
-}
-
-/* Formulários com fundo translúcido */
-form {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: auto;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: 6px;
+/* Botão */
+button[type="submit"] {
+  background-color: #ffb300;
   border: none;
-  font-size: 1em;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  margin-bottom: 15px;
+  color: black;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-input::placeholder,
-textarea::placeholder {
+button[type="submit"]:hover {
+  background-color: #ffa000;
+}
+
+/* Inputs */
+input, textarea {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 16px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Placeholders */
+input::placeholder, textarea::placeholder {
   color: #ccc;
 }
 
-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.button {
-  background-color: #FFB400;
-  color: black;
-  padding: 12px;
-  text-align: center;
-  border-radius: 6px;
-  font-weight: bold;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #e0a000;
-}
-
-/* Galeria com efeito de entrada */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+/* Texto de agradecimento */
+.success-message {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
   padding: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
   border-radius: 10px;
-  transition: transform 0.3s ease;
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-.gallery img.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-  #menu-toggle {
-    display: block;
-  }
-  .texto-bg, form {
-    padding: 15px;
-  }
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: center;
+  backdrop-filter: blur(4px);
 }
