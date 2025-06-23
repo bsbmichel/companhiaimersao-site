@@ -1,15 +1,53 @@
-// scripts.js atualizado com base no novo estilo
-
-// 1️⃣ Rolagem suave ao clicar nos links do menu
+// ✅ 1️⃣ Rolagem suave ao clicar nos links do menu
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    document.querySelector(link.getAttribute('href'))
-      ?.scrollIntoView({ behavior: 'smooth' });
+    const destino = document.querySelector(link.getAttribute('href'));
+    if (destino) {
+      destino.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
 
-// 2️⃣ Animação "fade-in" com interseção ao rolar a página
+// ✅ 2️⃣ ScrollReveal - animações ao rolar a página
+ScrollReveal().reveal('.fade-in-on-scroll', {
+  delay: 200,
+  distance: '50px',
+  duration: 1000,
+  easing: 'ease-in-out',
+  origin: 'bottom',
+  reset: false
+});
+
+// ✅ 3️⃣ Glide.js - Carrossel automático da galeria
+if (document.querySelector('.glide')) {
+  new Glide('.glide', {
+    type: 'carousel',
+    perView: 1,
+    autoplay: 5000,
+    hoverpause: true,
+    animationDuration: 800
+  }).mount();
+}
+
+// ✅ 4️⃣ Lightbox2 já funciona automaticamente com data-lightbox nos <a>
+
+// ✅ 5️⃣ Botão "Voltar ao Topo"
+const botaoTopo = document.getElementById("voltar-topo");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    botaoTopo.style.display = "block";
+  } else {
+    botaoTopo.style.display = "none";
+  }
+});
+
+botaoTopo.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// 🔄 [OPCIONAL] Caso queira manter fade-in com IntersectionObserver anterior:
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -24,12 +62,15 @@ document.querySelectorAll('.fade-in-on-scroll').forEach(element => {
   observer.observe(element);
 });
 
-// 3️⃣ Menu mobile com botão "hambúrguer"
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.querySelector('nav').classList.toggle('open');
-});
+// 🍔 Menu mobile com botão "hambúrguer"
+const menuToggle = document.getElementById('menu-toggle');
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('open');
+  });
+}
 
-// 4️⃣ Confirmação visual do envio do formulário "Contato"
+// 📩 Confirmação visual e validação do formulário de Contato
 const contatoForm = document.getElementById('contato-form');
 const iframe = document.getElementById('hidden_iframe');
 let submitted = false;
@@ -72,28 +113,3 @@ if (contatoForm && iframe) {
     }
   });
 }
-
-// 5️⃣ Animação nas imagens da galeria (zoom on scroll)
-const galeriaImgs = document.querySelectorAll('.gallery img');
-const galeriaObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('zoom-in');
-    } else {
-      entry.target.classList.remove('zoom-in');
-    }
-  });
-}, { threshold: 0.3 });
-
-galeriaImgs.forEach(img => galeriaObserver.observe(img));
-
-// 6️⃣ ScrollReveal animações
-ScrollReveal().reveal('.fade-in-on-scroll', {
-  delay: 200,
-  distance: '50px',
-  duration: 1000,
-  easing: 'ease-in-out',
-  origin: 'bottom',
-  reset: false
-});
-
