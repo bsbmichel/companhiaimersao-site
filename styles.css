@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,8 +12,9 @@ body {
   line-height: 1.6;
 }
 
-/* Parallax sections com fundo adaptado e responsivo */
+/* Seções com fundo parallax responsivo */
 section.parallax {
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,9 +23,16 @@ section.parallax {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-attachment: fixed;
 }
 
+/* Corrige o background em dispositivos móveis */
+@media (max-width: 1024px) {
+  section.parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* Texto sobre imagens com fundo escurecido */
 .banner-text {
   text-align: center;
   z-index: 2;
@@ -33,6 +42,7 @@ section.parallax {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 10px;
+  max-width: 90vw;
 }
 
 h1, h2, h3 {
@@ -41,6 +51,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
+/* Navegação */
 nav {
   background: #111;
   padding: 10px;
@@ -62,6 +73,13 @@ nav a {
   cursor: pointer;
 }
 
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Seções de conteúdo */
 section.content-section {
   padding: 60px 20px;
 }
@@ -75,13 +93,15 @@ section.content-section {
   text-align: justify;
 }
 
-/* Formulários com fundo translúcido */
+/* Formulários */
 form {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 10px;
   max-width: 600px;
   margin: auto;
+  color: #fff;
+  width: 90%;
 }
 
 input, textarea {
@@ -121,7 +141,7 @@ textarea {
   background-color: #e0a000;
 }
 
-/* Galeria com efeito de entrada */
+/* Galeria com responsividade */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -143,7 +163,7 @@ textarea {
   transform: scale(1);
 }
 
-/* Responsividade */
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
   nav a {
     display: block;
@@ -154,21 +174,24 @@ textarea {
     display: block;
   }
 
+  .menu {
+    display: none;
+    flex-direction: column;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
   .texto-bg, form {
     padding: 15px;
   }
 
-  section.parallax {
-    background-attachment: scroll;
-    background-size: contain;
-    background-position: top center;
-  }
-
-  h1, h2, h3 {
-    font-size: 22px;
-  }
-
   .overlay-text {
-    padding: 15px;
+    padding: 10px;
+  }
+
+  section.parallax {
+    min-height: 80vh;
   }
 }
