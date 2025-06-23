@@ -7,13 +7,45 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding-top: 60px; /* Altura equivalente ao nav fixo */
   background-color: #000;
   color: #fff;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-/* Seções com fundo parallax responsivo */
+/* Navegação Fixa */
+nav {
+  background: #111;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #FFB400;
+}
+
+nav a {
+  color: #FFB400;
+  text-decoration: none;
+  margin: 10px 15px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#menu-toggle {
+  display: none;
+  color: #FFB400;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Banner */
 section.parallax {
   background-attachment: fixed;
   background-size: cover;
@@ -26,7 +58,6 @@ section.parallax {
   position: relative;
 }
 
-/* Corrige o background em dispositivos móveis */
 @media (max-width: 1024px) {
   section.parallax {
     background-attachment: scroll;
@@ -52,34 +83,9 @@ h1, h2, h3 {
   text-align: center;
 }
 
-/* Navegação */
-nav {
-  background: #111;
-  padding: 10px;
-  text-align: center;
-  position: fixed; /* Fixa no topo */
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-#menu-toggle {
-  display: none;
-  color: #FFB400;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 /* Seções de conteúdo */
 section.content-section {
-  padding: 60px 20px;
+  padding: 80px 20px 60px;
 }
 
 .texto-bg {
@@ -139,46 +145,81 @@ textarea {
   background-color: #e0a000;
 }
 
-/* Galeria com responsividade */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
+/* Galeria - carrossel */
+.glide {
+  max-width: 1000px;
+  margin: 40px auto;
 }
 
-.gallery img {
+.glide__slide img {
   width: 100%;
-  height: auto;
   border-radius: 10px;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Botão WhatsApp */
+#whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
-  opacity: 0;
-  transform: scale(0.8);
 }
 
-.gallery img.visible {
-  opacity: 1;
-  transform: scale(1);
+#whatsapp-float:hover {
+  transform: scale(1.1);
 }
 
-/* Responsividade para telas menores */
+/* Botão Voltar ao Topo */
+#voltar-topo {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 999;
+  border: none;
+  outline: none;
+  background-color: #FFB400;
+  color: #000;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#voltar-topo:hover {
+  background-color: #e0a000;
+  transform: scale(1.1);
+}
+
+/* Rodapé */
+footer {
+  background-color: #111;
+  padding: 30px 20px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9em;
+  border-top: 1px solid #333;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   nav a {
     display: block;
     margin: 10px 0;
-  }
-
-  #menu-toggle {
-    display: block;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-  }
-
-  .menu.active {
-    display: flex;
   }
 
   .texto-bg, form {
@@ -192,25 +233,4 @@ textarea {
   section.parallax {
     min-height: 80vh;
   }
-}
-
-/* Ícone flutuante do WhatsApp */
-#whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  font-size: 28px;
-  padding: 14px;
-  border-radius: 50%;
-  text-align: center;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
-}
-
-#whatsapp-float:hover {
-  transform: scale(1.1);
-  background-color: #20b954;
 }
