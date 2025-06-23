@@ -86,3 +86,14 @@ const galeriaObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 galeriaImgs.forEach(img => galeriaObserver.observe(img));
+
+// 6️⃣ ScrollReveal animações
+ScrollReveal().reveal('.fade-in-on-scroll', {
+  delay: 200,
+  distance: '50px',
+  duration: 1000,
+  easing: 'ease-in-out',
+  origin: 'bottom',
+  reset: false
+});
+
