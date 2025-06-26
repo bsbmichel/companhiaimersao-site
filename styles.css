@@ -191,57 +191,6 @@ textarea {
   object-fit: contain;
 }
 
-/* CONTÊINER DOS BOTÕES FIXOS */
-.botoes-flutuantes {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
-  z-index: 999;
-}
-
-/* WHATSAPP */
-#whatsapp-float {
-  background-color: #25D366;
-  color: white;
-  border-radius: 50%;
-  padding: 15px;
-  font-size: 24px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.texto-whatsapp,
-.texto-topo {
-  margin-top: 5px;
-  font-size: 12px;
-  color: #FFB400;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* VOLTAR AO TOPO */
-#voltar-topo {
-  background-color: #FFB400;
-  color: black;
-  border: none;
-  border-radius: 50%;
-  padding: 12px;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* RODAPÉ */
 footer {
   background-color: #111;
