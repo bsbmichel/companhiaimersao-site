@@ -1,4 +1,4 @@
-/* RESET BÁSICO */
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,18 +13,18 @@ body {
   scroll-behavior: smooth;
 }
 
-/* NAVEGAÇÃO FIXA */
+/* Navegação Fixa */
 nav {
   background: #111;
-  padding: 10px 20px;
+  padding: 10px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   border-bottom: 2px solid #FFB400;
 }
 
@@ -44,35 +44,7 @@ nav a {
   margin-right: 20px;
 }
 
-/* MENU MOBILE */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    display: none;
-  }
-
-  nav.open {
-    display: flex;
-  }
-
-  #menu-toggle {
-    display: block;
-    position: fixed;
-    top: 15px;
-    left: 20px;
-    z-index: 1000;
-  }
-
-  nav a {
-    display: block;
-    margin: 15px 0;
-    font-size: 1.2em;
-  }
-}
-
-/* BANNER */
+/* Banner */
 section.parallax {
   background-attachment: fixed;
   background-size: cover;
@@ -83,7 +55,6 @@ section.parallax {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding-top: 60px; /* evita sobreposição do menu */
 }
 
 @media (max-width: 1024px) {
@@ -92,7 +63,7 @@ section.parallax {
   }
 }
 
-/* TEXTO SOBRE IMAGEM */
+/* Texto sobre imagens com fundo escurecido */
 .banner-text {
   text-align: center;
   z-index: 2;
@@ -105,28 +76,27 @@ section.parallax {
   max-width: 90vw;
 }
 
-/* TÍTULOS */
 h1, h2, h3 {
   color: #FFB400;
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* SEÇÕES DE CONTEÚDO */
+/* Seções de conteúdo */
 section.content-section {
-  padding: 80px 20px 60px;
+  padding: 100px 20px 60px;
 }
 
 .texto-bg {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 10px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   text-align: justify;
 }
 
-/* FORMULÁRIOS */
+/* Formulários */
 form {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
@@ -174,24 +144,41 @@ textarea {
   background-color: #e0a000;
 }
 
-/* GALERIA */
+/* Galeria de Imagens */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  padding: 20px;
-  max-width: 1000px;
+  padding: 30px;
+  max-width: 1200px;
   margin: auto;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
   object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
-/* RODAPÉ */
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Botões Flutuantes */
+.float-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  z-index: 999;
+}
+
+/* Rodapé */
 footer {
   background-color: #111;
   padding: 30px 20px;
@@ -201,13 +188,38 @@ footer {
   border-top: 1px solid #333;
 }
 
-.footer-content p {
-  margin: 5px 0;
+/* Trabalhe Conosco */
+#trabalhe .texto-bg {
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  text-align: center;
 }
 
-/* RESPONSIVIDADE EXTRA */
+#trabalhe iframe.form-iframe {
+  width: 100%;
+  height: 650px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-  .texto-bg, form {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .texto-bg,
+  form {
     padding: 15px;
   }
 
@@ -217,9 +229,5 @@ footer {
 
   section.parallax {
     min-height: 80vh;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr;
   }
 }
