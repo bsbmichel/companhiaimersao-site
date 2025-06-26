@@ -1,4 +1,4 @@
-// ✅ 1️⃣ Rolagem suave ao clicar nos links do menu
+// Rolagem suave ao clicar nos links do menu
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -12,7 +12,7 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-// ✅ 2️⃣ ScrollReveal - animações ao rolar a página
+//ScrollReveal - animações ao rolar a página
 ScrollReveal().reveal('.fade-in-on-scroll', {
   delay: 200,
   distance: '50px',
@@ -22,7 +22,7 @@ ScrollReveal().reveal('.fade-in-on-scroll', {
   reset: false
 });
 
-// ✅ 3️⃣ Glide.js - Carrossel automático da galeria (se usar Glide futuramente)
+//Glide.js - Carrossel automático da galeria (se usar Glide futuramente)
 if (document.querySelector('.glide')) {
   new Glide('.glide', {
     type: 'carousel',
@@ -33,26 +33,9 @@ if (document.querySelector('.glide')) {
   }).mount();
 }
 
-// ✅ 4️⃣ Lightbox2 - já funciona com data-lightbox nos <a>
+//Lightbox2 - já funciona com data-lightbox nos <a>
 
-// ✅ 5️⃣ Botão "Voltar ao Topo" com legenda
-const botaoTopo = document.getElementById("voltar-topo");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    botaoTopo.style.display = "flex"; // flex para alinhar ícone e legenda
-  } else {
-    botaoTopo.style.display = "none";
-  }
-});
-
-if (botaoTopo) {
-  botaoTopo.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-// ✅ 6️⃣ Animação fade-in alternativa com IntersectionObserver (opcional)
+//Animação fade-in alternativa com IntersectionObserver (opcional)
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -67,7 +50,7 @@ document.querySelectorAll('.fade-in-on-scroll').forEach(element => {
   observer.observe(element);
 });
 
-// ✅ 7️⃣ Menu mobile com botão "hambúrguer"
+// Menu mobile com botão "hambúrguer"
 const menuToggle = document.getElementById('menu-toggle');
 if (menuToggle) {
   menuToggle.addEventListener('click', () => {
@@ -75,7 +58,7 @@ if (menuToggle) {
   });
 }
 
-// ✅ 8️⃣ Validação de formulário de contato + sucesso
+//Validação de formulário de contato + sucesso
 const contatoForm = document.getElementById('contato-form');
 const iframe = document.getElementById('hidden_iframe');
 let submitted = false;
