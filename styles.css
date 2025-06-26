@@ -177,25 +177,15 @@ footer {
   border-top: 1px solid #333;
 }
 
-/* Trabalhe Conosco */
-#trabalhe .content {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-#trabalhe .form-wrapper {
+/* Tally - Trabalhe Conosco */
+.iframe-tally {
   width: 100%;
-  padding: 0;
-  margin-top: 20px;
-}
-
-#trabalhe iframe.form-iframe {
-  width: 100%;
-  min-height: 750px;
+  max-width: 1000px;
+  height: 700px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Responsividade */
