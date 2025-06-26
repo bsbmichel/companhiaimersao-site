@@ -16,7 +16,7 @@ body {
 /* Navegação Fixa */
 nav {
   background: #111;
-  padding: 10px;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -55,6 +55,7 @@ section.parallax {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-top: 60px; /* espaço pro menu fixo */
 }
 
 @media (max-width: 1024px) {
@@ -166,18 +167,6 @@ textarea {
   transform: scale(1.03);
 }
 
-/* Botões Flutuantes */
-.float-container {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 15px;
-  z-index: 999;
-}
-
 /* Rodapé */
 footer {
   background-color: #111;
@@ -189,19 +178,22 @@ footer {
 }
 
 /* Trabalhe Conosco */
-#trabalhe .texto-bg {
-  max-width: 1000px;
-  width: 90%;
+#trabalhe .content {
+  max-width: 1200px;
   margin: auto;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
+  padding: 40px 20px;
   text-align: center;
+}
+
+#trabalhe .form-wrapper {
+  width: 100%;
+  padding: 0;
+  margin-top: 20px;
 }
 
 #trabalhe iframe.form-iframe {
   width: 100%;
-  height: 650px;
+  min-height: 750px;
   border: none;
   border-radius: 8px;
 }
@@ -229,5 +221,9 @@ footer {
 
   section.parallax {
     min-height: 80vh;
+  }
+
+  #trabalhe iframe.form-iframe {
+    min-height: 900px;
   }
 }
