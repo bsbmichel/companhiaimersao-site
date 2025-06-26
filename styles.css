@@ -198,6 +198,8 @@ footer {
   border: none;
   border-radius: 8px;
   margin-top: 20px;
+  overflow: hidden;
+  display: block;
 }
 
 /* Responsividade */
