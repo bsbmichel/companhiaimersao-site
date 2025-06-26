@@ -1,4 +1,4 @@
-// ✅ 1️⃣ Rolagem suave ao clicar nos links do menu
+//Rolagem suave ao clicar nos links do menu
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -9,7 +9,7 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-// ✅ 2️⃣ ScrollReveal - animações ao rolar a página
+//ScrollReveal - animações ao rolar a página
 ScrollReveal().reveal('.fade-in-on-scroll', {
   delay: 200,
   distance: '50px',
@@ -19,20 +19,9 @@ ScrollReveal().reveal('.fade-in-on-scroll', {
   reset: false
 });
 
-// ✅ 3️⃣ Glide.js - Carrossel automático da galeria
-if (document.querySelector('.glide')) {
-  new Glide('.glide', {
-    type: 'carousel',
-    perView: 1,
-    autoplay: 5000,
-    hoverpause: true,
-    animationDuration: 800
-  }).mount();
-}
+//Lightbox2 já funciona automaticamente com data-lightbox nos <a>
 
-// ✅ 4️⃣ Lightbox2 já funciona automaticamente com data-lightbox nos <a>
-
-// ✅ 5️⃣ Botão "Voltar ao Topo"
+//Botão "Voltar ao Topo"
 const botaoTopo = document.getElementById("voltar-topo");
 
 window.addEventListener("scroll", () => {
@@ -47,7 +36,7 @@ botaoTopo.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// 🔄 [OPCIONAL] Caso queira manter fade-in com IntersectionObserver anterior:
+//IntersectionObserver com fallback para fade-in
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -62,7 +51,7 @@ document.querySelectorAll('.fade-in-on-scroll').forEach(element => {
   observer.observe(element);
 });
 
-// 🍔 Menu mobile com botão "hambúrguer"
+//Menu mobile (hambúrguer)
 const menuToggle = document.getElementById('menu-toggle');
 if (menuToggle) {
   menuToggle.addEventListener('click', () => {
@@ -70,7 +59,7 @@ if (menuToggle) {
   });
 }
 
-// 📩 Confirmação visual e validação do formulário de Contato
+//Validação de formulário e resposta visual
 const contatoForm = document.getElementById('contato-form');
 const iframe = document.getElementById('hidden_iframe');
 let submitted = false;
