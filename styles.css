@@ -1,4 +1,4 @@
-/* Reset básico */
+/* RESET BÁSICO */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,36 +13,19 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Navegação Fixa */
+/* NAVEGAÇÃO FIXA */
 nav {
   background: #111;
-  padding: 10px;
-  text-align: center;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  border-bottom: 2px solid #FFB400;
-}
-
-nav #menu-toggle {
-  display: none;
-  color: #FFB400;
-  font-size: 24px;
-  cursor: pointer;
-  margin-left: 20px;
-}
-
-.nav-links {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  border-bottom: 2px solid #FFB400;
 }
 
 nav a {
@@ -53,18 +36,43 @@ nav a {
   font-size: 1em;
 }
 
-/* Layout mobile menu */
-nav.open .nav-links {
-  display: block;
-  width: 100%;
+#menu-toggle {
+  display: none;
+  color: #FFB400;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
 }
 
-nav.open a {
-  display: block;
-  margin: 10px 0;
+/* MENU MOBILE */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    display: none;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    z-index: 1000;
+  }
+
+  nav a {
+    display: block;
+    margin: 15px 0;
+    font-size: 1.2em;
+  }
 }
 
-/* Banner */
+/* BANNER */
 section.parallax {
   background-attachment: fixed;
   background-size: cover;
@@ -75,6 +83,7 @@ section.parallax {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-top: 60px; /* evita sobreposição do menu */
 }
 
 @media (max-width: 1024px) {
@@ -83,7 +92,7 @@ section.parallax {
   }
 }
 
-/* Texto sobre imagens com fundo escurecido */
+/* TEXTO SOBRE IMAGEM */
 .banner-text {
   text-align: center;
   z-index: 2;
@@ -96,13 +105,14 @@ section.parallax {
   max-width: 90vw;
 }
 
+/* TÍTULOS */
 h1, h2, h3 {
   color: #FFB400;
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* Seções de conteúdo */
+/* SEÇÕES DE CONTEÚDO */
 section.content-section {
   padding: 80px 20px 60px;
 }
@@ -116,7 +126,7 @@ section.content-section {
   text-align: justify;
 }
 
-/* Formulários */
+/* FORMULÁRIOS */
 form {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
@@ -164,83 +174,73 @@ textarea {
   background-color: #e0a000;
 }
 
-/* Galeria */
+/* GALERIA */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  padding: 40px 20px;
-}
-
-.gallery a {
-  flex: 1 1 300px;
-  max-width: 400px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
-  max-height: 400px;
-  object-fit: contain;
   border-radius: 10px;
-  transition: transform 0.3s;
+  object-fit: contain;
 }
 
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* Botão WhatsApp */
+/* BOTÃO WHATSAPP */
 #whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background-color: #25D366;
   color: white;
-  border-radius: 50px;
-  padding: 12px 20px;
-  font-size: 18px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  border-radius: 100%;
+  padding: 15px;
+  font-size: 24px;
+  z-index: 998;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
 }
 
-#whatsapp-float:hover {
-  transform: scale(1.1);
+#whatsapp-float span {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #FFB400;
+  font-weight: bold;
 }
 
-.whatsapp-text {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .whatsapp-text {
-    display: inline;
-  }
-}
-
-/* Botão Voltar ao Topo */
+/* BOTÃO VOLTAR AO TOPO */
 #voltar-topo {
   display: none;
   position: fixed;
-  bottom: 80px;
+  bottom: 90px;
   right: 20px;
-  z-index: 999;
-  border: none;
-  outline: none;
   background-color: #FFB400;
   color: #000;
-  cursor: pointer;
-  padding: 12px;
+  border: none;
   border-radius: 50%;
+  padding: 12px;
   font-size: 20px;
+  z-index: 998;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#voltar-topo span {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #FFB400;
+  font-weight: bold;
 }
 
 #voltar-topo:hover {
@@ -248,7 +248,7 @@ textarea {
   transform: scale(1.1);
 }
 
-/* Rodapé */
+/* RODAPÉ */
 footer {
   background-color: #111;
   padding: 30px 20px;
@@ -262,7 +262,7 @@ footer {
   margin: 5px 0;
 }
 
-/* Responsividade extra */
+/* RESPONSIVIDADE EXTRA */
 @media (max-width: 768px) {
   .texto-bg, form {
     padding: 15px;
@@ -276,28 +276,7 @@ footer {
     min-height: 80vh;
   }
 
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 10px 20px;
-    text-align: left;
-  }
-
-  #menu-toggle {
-    display: block;
-  }
-
-  .whatsapp-text {
-    display: none;
+  .gallery {
+    grid-template-columns: 1fr;
   }
 }
