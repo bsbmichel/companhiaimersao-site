@@ -177,15 +177,17 @@ footer {
   border-top: 1px solid #333;
 }
 
-/* Tally - Trabalhe Conosco */
+/* Trabalhe Conosco */
+#trabalhe .content {
+  max-width: 1200px;
+  margin: auto;
+}
+
 .iframe-tally {
   width: 100%;
-  max-width: 1000px;
-  height: 700px;
+  min-height: 750px;
   border: none;
-  border-radius: 10px;
-  margin: 0 auto;
-  display: block;
+  border-radius: 8px;
 }
 
 /* Responsividade */
