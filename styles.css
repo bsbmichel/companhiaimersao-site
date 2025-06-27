@@ -181,6 +181,25 @@ footer {
 #trabalhe h2, #trabalhe h3 {
   text-align: center;
 }
+.tally-embed-wrapper {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.tally-embed-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
 
 /* Responsividade */
 @media (max-width: 768px) {
