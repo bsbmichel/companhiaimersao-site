@@ -1,4 +1,4 @@
-  /* Reset básico */
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -87,13 +87,25 @@ section.content-section {
   padding: 100px 80px 60px;
 }
 
+/* Bloco de texto com melhorias de leitura */
 .texto-bg {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
+  padding: 24px; /* ↑ Melhorado para leitura */
   border-radius: 10px;
   max-width: 1000px;
   margin: auto;
   text-align: justify;
+  hyphens: auto; /* ↑ Hifenização para texto justificado */
+}
+
+.texto-bg ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.texto-bg li {
+  margin-bottom: 12px;
+  line-height: 1.6;
 }
 
 /* Formulários */
@@ -181,6 +193,7 @@ footer {
 #trabalhe h2, #trabalhe h3 {
   text-align: center;
 }
+
 /* Trabalhe Conosco - Layout do iframe responsivo em tela cheia */
 .full-height {
   height: 100vh;
@@ -194,7 +207,7 @@ footer {
 .tally-embed-wrapper {
   width: 100%;
   height: 100%;
-  max-width: clamp(320px, 80%, 500px);  /* largura mínima, ideal e máxima */
+  max-width: clamp(320px, 80%, 500px);  /* ← Aqui você ajusta a largura ideal do iframe */
   margin: 0 auto;
 }
 
@@ -219,10 +232,11 @@ footer {
 
   .texto-bg,
   form {
-    padding: 15px;
+    padding: 20px; /* ← Maior conforto em mobile */
     width: 95%;
+    hyphens: auto;
   }
-  
+
   input, textarea {
     font-size: 1em;
   }
@@ -230,6 +244,7 @@ footer {
   .button {
     font-size: 1em;
   }
+
   .overlay-text {
     padding: 10px;
   }
@@ -240,6 +255,6 @@ footer {
 
   .tally-embed-wrapper {
     height: 100vh;
-    width: 95%;
+    width: 95%; /* ← Tamanho ajustado para celular */
   }
 }
