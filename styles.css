@@ -180,38 +180,23 @@ footer {
 #trabalhe h2, #trabalhe h3 {
   text-align: center;
 }
-
-#trabalhe {
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
+/* Corrige exibição da seção Trabalhe Conosco com Tally */
+.full-height {
+  height: 100vh;
   position: relative;
   display: flex;
   align-items: stretch;
   justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.tally-embed-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  max-width: 1000px;
-  margin: auto;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
-
-.tally-embed-wrapper iframe {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+.tally-form-iframe {
   width: 100%;
   height: 100%;
   border: none;
   border-radius: 10px;
+  z-index: 2;
 }
 
 /* Responsividade */
