@@ -1,4 +1,4 @@
-/* Reset básico */
+  /* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -116,6 +116,7 @@ input, textarea {
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
   margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 input::placeholder,
@@ -219,8 +220,16 @@ footer {
   .texto-bg,
   form {
     padding: 15px;
+    width: 95%;
+  }
+  
+  input, textarea {
+    font-size: 1em;
   }
 
+  .button {
+    font-size: 1em;
+  }
   .overlay-text {
     padding: 10px;
   }
