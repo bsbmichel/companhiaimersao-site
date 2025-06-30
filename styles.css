@@ -40,6 +40,10 @@ nav {
   cursor: pointer;
 }
 
+nav.open .nav-links {
+  display: flex;
+}
+
 .nav-links {
   display: flex;
   flex-direction: row;
