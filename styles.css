@@ -90,13 +90,12 @@ section.content-section {
 
 .texto-bg {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px 24px; /* Maior padding lateral para conforto */
+  padding: 24px; /* Maior conforto visual */
   border-radius: 10px;
-  max-width: 600px; /* Limita a largura em telas grandes */
+  max-width: 95vw; /* Aumenta a largura geral do bloco */
   margin: auto;
-  text-align: justify;
-  hyphens: auto; /* Quebra automática de palavras */
-  word-break: break-word;
+  text-align: left; /* Alinhamento natural */
+  hyphens: none; /* Remove hífen automático */
 }
 
 /* Formulários */
@@ -223,7 +222,7 @@ footer {
 
   .texto-bg,
   form {
-    padding: 16px 20px; /* Mais conforto em smartphones */
+    padding: 20px; /* Mais conforto em smartphones */
     width: 95%;
     max-width: 90vw; /* Evita que o texto encoste nas bordas */
   }
