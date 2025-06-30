@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Companhia Imersão</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -22,7 +22,7 @@
 
   <!-- Menu de navegação -->
   <nav>
-    <div id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div id="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></div>
     <div class="nav-links" id="nav-links">
       <a href="#sobre">Quem Somos</a>
       <a href="#servicos">Serviços</a>
@@ -130,7 +130,8 @@
   <script>
     // Script para abrir/fechar menu mobile
     document.getElementById("menu-toggle").addEventListener("click", function() {
-      document.getElementById("nav-links").classList.toggle("active");
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("active");
     });
   </script>
 </body>
