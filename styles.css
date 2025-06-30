@@ -1,4 +1,4 @@
-/* Reset e base */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -6,98 +6,143 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #000;
+  font-family: Arial, sans-serif;
   color: #fff;
+  background-color: #000;
   overflow-x: hidden;
 }
 
+/* Header / topo do site */
+header {
+  background-color: #222;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
 /* Menu de navegação */
-.menu {
-  background-color: #1a1a1a;
-  padding: 20px 0;
+nav {
+  background-color: #111;
+  padding: 10px 0;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 2px solid orange;
 }
 
-.menu a {
+nav a {
   display: block;
-  margin: 10px 0;
+  padding: 10px 0;
+  color: orange;
   font-weight: bold;
-  color: #fca311;
   text-decoration: none;
-  font-size: 1.2em;
 }
 
-.menu a:hover {
-  text-decoration: underline;
+nav a:hover {
+  color: #fff;
 }
 
-/* Seções */
+/* Seções gerais */
 section {
-  padding: 60px 0;
-  text-align: center;
+  padding: 60px 20px;
   background-size: cover;
   background-position: center;
-  position: relative;
+  background-repeat: no-repeat;
+  text-align: center;
 }
 
-h1, h2 {
+/* Seções com título e fundo transparente */
+section h2 {
   font-size: 2em;
-  color: #fca311;
+  margin-bottom: 20px;
+  color: orange;
+}
+
+/* Banner principal */
+.banner {
+  background-image: url('imagens/banner.jpg'); /* ajuste se necessário */
+  padding: 100px 20px 60px;
+  text-align: center;
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  color: orange;
   margin-bottom: 20px;
 }
 
-/* Texto com fundo escuro */
-.texto-bg {
-  background-color: rgba(0, 0, 0, 0.7);
+.banner p {
+  font-size: 1.1em;
   color: white;
-  border-radius: 10px;
-  padding: 10px 15px;          /* Padding lateral reduzido */
+  max-width: 800px;
   margin: 0 auto;
-  max-width: 100vw;            /* Aumentado para ocupar toda a largura da tela */
-  width: 100%;
-  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* NOVA CLASSE para controlar largura do conteúdo central (apenas quem somos e serviços) */
+.section-box {
+  max-width: 90%;           /* Aumenta a largura no mobile */
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  color: white;
+  text-align: start;
   line-height: 1.6;
-  text-align-last: left;       /* Garante alinhamento final */
-  hyphens: none;               /* Remove hifenização automática */
+  hyphens: none;            /* Remove hifens automáticos */
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
 }
 
-/* Evita justificação forçada com hífens */
-.texto-bg p {
-  text-align: left;
-  text-align-last: left;
-  hyphens: none;
+/* Estilos para listas */
+ul {
+  list-style: disc inside;
+  padding-left: 0;
+  text-align: start;
 }
 
-/* Seção do formulário Tally */
-.tally-embed-wrapper {
-  position: relative;
-  padding-top: 100%;
-  height: 0;
-  overflow: hidden;
+/* Animação de fade-in ao rolar */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.tally-embed-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-  h1, h2 {
-    font-size: 1.5em;
+@media (min-width: 768px) {
+  nav a {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 10px;
   }
 
-  .texto-bg {
-    max-width: 100vw;         /* Garante largura total em telas pequenas */
-    width: 100%;
-    padding: 10px 15px;
+  .banner h1 {
+    font-size: 3em;
   }
 
-  .menu a {
-    font-size: 1em;
+  .banner p {
+    font-size: 1.2em;
+  }
+
+  .section-box {
+    max-width: 800px; /* Largura padrão para desktop */
   }
 }
