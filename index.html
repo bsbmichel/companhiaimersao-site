@@ -4,9 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Companhia Imersão</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
+  <!-- Scripts com defer -->
+  <script src="scripts.js" defer></script>
+  <script src="https://unpkg.com/scrollreveal" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" defer></script>
 </head>
 <body>
 
@@ -122,34 +129,6 @@
       Desenvolvido por Kampello Tech &middot; Todos os direitos reservados
     </p>
   </footer>
-
-  <!-- Scripts -->
-  <script src="scripts.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-  <script>
-    // Script para abrir/fechar menu mobile
-    document.getElementById("menu-toggle").addEventListener("click", function() {
-      const navLinks = document.getElementById("nav-links");
-      navLinks.classList.toggle("active");
-    });
-  </script>
-
-  <script>
-  // Fade-in ao rolar a página
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // evita repetir
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
-    observer.observe(el);
-    });
-  </script>
 
 </body>
 </html>
