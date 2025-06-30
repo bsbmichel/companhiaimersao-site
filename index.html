@@ -23,7 +23,7 @@
   <!-- Menu de navegação -->
   <nav>
     <div id="menu-toggle"><i class="fas fa-bars"></i></div>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="#sobre">Quem Somos</a>
       <a href="#servicos">Serviços</a>
       <a href="#galeria">Galeria</a>
@@ -34,32 +34,32 @@
 
   <!-- Seção Sobre -->
   <section id="sobre" class="parallax content-section" style="background-image: url('images/banner_sobre.png');">
-    <div class="content fade-in-on-scroll">
+    <div class="section-box fade-in-on-scroll">
       <h2>Quem Somos</h2>
-      <div class="section-box">
-          <p>A Companhia Imersão, sediada em Brasília‑DF, é uma produtora cultural especializada em experiências imersivas únicas. Unimos teatro, dança, jogos teatrais e aventuras LARP a personagens da cultura pop, filmes, séries, desenhos, games e incluindo ícones como Michael Jackson, Freddie Mercury, Bruno Mars, Marilyn Monroe e muitos outros.</p>
-          <p>Também criamos personagens exclusivos sob medida para você. Todos os nossos espetáculos são desenvolvidos com padrão artístico elevado, reunindo figurinos elaborados, coreografias envolventes e direção cênica profissional.</p>
-          <p>Atuamos em eventos sociais, corporativos e culturais, oferecendo experiências memoráveis, impactantes e verdadeiramente inesquecíveis.</p>
+      <div class="texto-bg">
+        <p>A Companhia Imersão, sediada em Brasília‑DF, é uma produtora cultural especializada em experiências imersivas únicas. Unimos teatro, dança, jogos teatrais e aventuras LARP a personagens da cultura pop, filmes, séries, desenhos, games e incluindo ícones como Michael Jackson, Freddie Mercury, Bruno Mars, Marilyn Monroe e muitos outros.</p>
+        <p>Também criamos personagens exclusivos sob medida para você. Todos os nossos espetáculos são desenvolvidos com padrão artístico elevado, reunindo figurinos elaborados, coreografias envolventes e direção cênica profissional.</p>
+        <p>Atuamos em eventos sociais, corporativos e culturais, oferecendo experiências memoráveis, impactantes e verdadeiramente inesquecíveis.</p>
       </div>
     </div>
   </section>
 
   <!-- Seção Serviços -->
   <section id="servicos" class="parallax content-section" style="background-image: url('images/banner_servicos.png');">
-    <div class="content fade-in-on-scroll">
+    <div class="section-box fade-in-on-scroll">
       <h2>Nossos Serviços</h2>
-      <div class="section-box">
+      <div class="texto-bg">
         <h3>Para Eventos</h3>
-          <ul>
-            <li><strong>Performasse:</strong> Nossas apresentações combinam teatro, dança, música e circo em narrativas imersivas e envolventes.</li>
-            <li><strong>Teatro Imersivo com Jogo:</strong> O público deixa de ser espectador e passa a fazer parte da história, interagindo com os personagens.</li>
-            <li><strong>Cortejo:</strong> Personagens cativantes circulam pelo evento, interagindo e tirando fotos com o público.</li>
-            <li><strong>Recepção Temática:</strong> Personagens recepcionam convidados com interação e fotos, criando uma atmosfera acolhedora.</li>
-          </ul>
-          <h3>Para Produção Cultural</h3>
-          <ul>
-            <li><strong>Produção Artística:</strong> Criamos roteiros, elenco, figurinos e direção para espetáculos personalizados e de alta qualidade.</li>
-          </ul>
+        <ul>
+          <li><strong>Performasse:</strong> Nossas apresentações combinam teatro, dança, música e circo em narrativas imersivas e envolventes.</li>
+          <li><strong>Teatro Imersivo com Jogo:</strong> O público deixa de ser espectador e passa a fazer parte da história, interagindo com os personagens.</li>
+          <li><strong>Cortejo:</strong> Personagens cativantes circulam pelo evento, interagindo e tirando fotos com o público.</li>
+          <li><strong>Recepção Temática:</strong> Personagens recepcionam convidados com interação e fotos, criando uma atmosfera acolhedora.</li>
+        </ul>
+        <h3>Para Produção Cultural</h3>
+        <ul>
+          <li><strong>Produção Artística:</strong> Criamos roteiros, elenco, figurinos e direção para espetáculos personalizados e de alta qualidade.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -85,7 +85,7 @@
 
   <!-- Seção Contato -->
   <section id="contato" class="parallax content-section" style="background-image: url('images/banner_contato.png');">
-    <div class="content fade-in-on-scroll">
+    <div class="section-box fade-in-on-scroll">
       <h2>Contato</h2>
       <form id="contato-form" method="post" action="https://script.google.com/macros/s/AKfycbyA7TOKl-lkOMXQ3jAUrCjaUmnB4XzI39IJqWa1Pde0RDV0k7wNvb3Lq7PNty7_ZJeq/exec" target="hidden_iframe">
         <input type="text" name="nome" placeholder="Seu nome" required>
@@ -127,5 +127,11 @@
   <script src="scripts.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script>
+    // Script para abrir/fechar menu mobile
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+      document.getElementById("nav-links").classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
