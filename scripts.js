@@ -1,88 +1,235 @@
-// Aguarda o carregamento completo do DOM
-document.addEventListener("DOMContentLoaded", () => {
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  // Rolagem suave ao clicar nos links do menu
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const destino = document.querySelector(link.getAttribute('href'));
-      if (destino) {
-        destino.scrollIntoView({ behavior: 'smooth' });
-      }
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #000;
+  overflow-x: hidden;
+}
 
-      // Fecha o menu mobile após clicar (caso esteja aberto)
-      document.querySelector('nav').classList.remove('open');
-      document.getElementById('nav-links').classList.remove('active');
-    });
-  });
+/* Header / topo do site */
+header {
+  background-color: #222;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
 
-  // Menu mobile com botão "hambúrguer"
-  const menuToggle = document.getElementById('menu-toggle');
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      const nav = document.querySelector('nav');
-      const navLinks = document.getElementById('nav-links');
-      nav.classList.toggle('open');
-      navLinks.classList.toggle('active');
-    });
+/* Menu de navegação */
+nav {
+  background-color: #111;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 2px solid orange;
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  color: orange;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 10px 15px;
+  color: orange;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+    margin-bottom: 10px;
   }
 
-  // ScrollReveal - animações ao rolar a página
-  if (typeof ScrollReveal !== 'undefined') {
-    ScrollReveal().reveal('.fade-in-on-scroll', {
-      delay: 200,
-      distance: '50px',
-      duration: 1000,
-      easing: 'ease-in-out',
-      origin: 'bottom',
-      reset: false
-    });
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
   }
 
-  // Lightbox2 já funciona por padrão com data-lightbox nos <a>
-
-  // Validação de formulário de contato + sucesso
-  const contatoForm = document.getElementById('contato-form');
-  const iframe = document.getElementById('hidden_iframe');
-  let submitted = false;
-
-  if (contatoForm && iframe) {
-    contatoForm.addEventListener('submit', function (e) {
-      const nome = contatoForm.nome.value.trim();
-      const email = contatoForm.email.value.trim();
-      const telefone = contatoForm.telefone.value.trim();
-      const mensagem = contatoForm.mensagem.value.trim();
-
-      const nomeValido = /^[A-Za-zÀ-ú\s]+$/;
-      const telefoneValido = /^[0-9]+$/;
-      const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!nomeValido.test(nome)) {
-        alert("Digite apenas letras no campo Nome.");
-        e.preventDefault();
-        return;
-      }
-      if (!telefoneValido.test(telefone)) {
-        alert("Digite apenas números no campo Telefone.");
-        e.preventDefault();
-        return;
-      }
-      if (!emailValido.test(email)) {
-        alert("Digite um e‑mail válido.");
-        e.preventDefault();
-        return;
-      }
-
-      submitted = true;
-    });
-
-    iframe.addEventListener('load', () => {
-      if (submitted) {
-        document.getElementById('mensagem-sucesso').style.display = 'block';
-        contatoForm.reset();
-        submitted = false;
-      }
-    });
+  nav.open .nav-links,
+  .nav-links.active {
+    display: flex;
   }
 
-});
+  .nav-links a {
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+  }
+}
+
+/* Seções gerais */
+section {
+  padding: 60px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+/* Títulos de seção */
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: orange;
+}
+
+/* Banner principal */
+.banner {
+  padding: 100px 20px 60px;
+  text-align: center;
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  color: orange;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  font-size: 1.1em;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Conteúdo centralizado com fundo semitransparente */
+.section-box {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  color: white;
+  text-align: start;
+  line-height: 1.6;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+}
+
+/* Ajuste de largura para desktop */
+@media (min-width: 768px) {
+  .section-box {
+    max-width: 800px;
+  }
+}
+
+/* Estilo para listas */
+ul {
+  list-style: disc inside;
+  padding-left: 0;
+  text-align: start;
+}
+
+/* Galeria */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* Fade-in ao rolar */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Formulário de contato */
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+form button {
+  background-color: orange;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: darkorange;
+}
+
+/* Rodapé */
+footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Tally formulário - seção Trabalhe Conosco */
+.tally-embed-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.tally-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Caixa com fundo transparente para textos */
+.texto-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+}
