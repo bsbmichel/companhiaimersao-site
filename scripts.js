@@ -18,12 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Menu mobile com botão "hambúrguer"
   const menuToggle = document.getElementById('menu-toggle');
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      const nav = document.querySelector('nav');
-      const navLinks = document.getElementById('nav-links');
-      nav.classList.toggle('open');
-      navLinks.classList.toggle('active');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+      document.querySelector('nav').classList.toggle('open');
     });
   }
 
