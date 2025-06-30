@@ -1,3 +1,4 @@
+
 /* Reset básico */
 * {
   margin: 0;
@@ -32,16 +33,54 @@ nav {
   border-bottom: 2px solid orange;
 }
 
-nav a {
-  display: block;
-  padding: 10px 0;
+#menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  color: orange;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 10px 15px;
   color: orange;
   font-weight: bold;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #fff;
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+  }
 }
 
 /* Seções gerais */
@@ -53,7 +92,7 @@ section {
   text-align: center;
 }
 
-/* Seções com título e fundo transparente */
+/* Títulos de seção */
 section h2 {
   font-size: 2em;
   margin-bottom: 20px;
@@ -62,7 +101,6 @@ section h2 {
 
 /* Banner principal */
 .banner {
-  background-image: url('imagens/banner.jpg'); /* ajuste se necessário */
   padding: 100px 20px 60px;
   text-align: center;
 }
@@ -83,9 +121,9 @@ section h2 {
   border-radius: 12px;
 }
 
-/* NOVA CLASSE para controlar largura do conteúdo central (apenas quem somos e serviços) */
+/* Conteúdo centralizado com fundo semitransparente */
 .section-box {
-  max-width: 90%;           /* Aumenta a largura no mobile */
+  max-width: 90%;
   margin: 0 auto;
   padding: 20px 16px 40px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -93,19 +131,41 @@ section h2 {
   color: white;
   text-align: start;
   line-height: 1.6;
-  hyphens: none;            /* Remove hifens automáticos */
+  hyphens: none;
   -webkit-hyphens: none;
   -moz-hyphens: none;
 }
 
-/* Estilos para listas */
+/* Ajuste de largura para desktop */
+@media (min-width: 768px) {
+  .section-box {
+    max-width: 800px;
+  }
+}
+
+/* Estilo para listas */
 ul {
   list-style: disc inside;
   padding-left: 0;
   text-align: start;
 }
 
-/* Animação de fade-in ao rolar */
+/* Galeria */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* Fade-in ao rolar */
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -117,6 +177,29 @@ ul {
   transform: translateY(0);
 }
 
+/* Formulário de contato */
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+form button {
+  background-color: orange;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: darkorange;
+}
+
 /* Rodapé */
 footer {
   background-color: #111;
@@ -124,25 +207,4 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 14px;
-}
-
-/* Responsividade */
-@media (min-width: 768px) {
-  nav a {
-    display: inline-block;
-    margin: 0 15px;
-    padding: 10px;
-  }
-
-  .banner h1 {
-    font-size: 3em;
-  }
-
-  .banner p {
-    font-size: 1.2em;
-  }
-
-  .section-box {
-    max-width: 800px; /* Largura padrão para desktop */
-  }
 }
