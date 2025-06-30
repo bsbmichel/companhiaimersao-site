@@ -134,5 +134,22 @@
       navLinks.classList.toggle("active");
     });
   </script>
+
+  <script>
+  // Fade-in ao rolar a página
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // evita repetir
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+    observer.observe(el);
+    });
+  </script>
+
 </body>
 </html>
