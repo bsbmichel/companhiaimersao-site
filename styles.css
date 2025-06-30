@@ -92,7 +92,7 @@ section.content-section {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 24px; /* Maior conforto visual */
   border-radius: 10px;
-  max-width: 195vw; /* Aumenta a largura geral do bloco */
+  max-width: 95vw; /* Aumenta a largura geral do bloco */
   margin: auto;
   text-align: left; /* Alinhamento natural */
   hyphens: none; /* Remove hífen automático */
