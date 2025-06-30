@@ -60,6 +60,12 @@ nav {
   color: #fff;
 }
 
+.texto-bg {
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo preto translúcido */
+  padding: 20px;
+  border-radius: 12px;
+}
+
 /* Menu mobile */
 @media (max-width: 768px) {
   #menu-toggle {
