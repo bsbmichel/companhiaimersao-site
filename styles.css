@@ -71,10 +71,9 @@ section.parallax {
 
 .overlay-text {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px 24px;
+  padding: 20px;
   border-radius: 10px;
-  max-width: 600px; /* Ajuste de largura como referência visual */
-  margin: auto;
+  max-width: 95%;
 }
 
 h1, h2, h3 {
@@ -90,11 +89,11 @@ section.content-section {
 
 .texto-bg {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 24px; /* Maior conforto visual */
+  padding: 24px; /* Aumentado para conforto em mobile */
   border-radius: 10px;
-  max-width: 95%; /* Aumenta a largura geral do bloco */
+  max-width: 95%; /* Aumenta a largura do texto */
   margin: auto;
-  text-align: left; /* Alinhamento natural */
+  text-align: left; /* Removido justify */
   hyphens: none; /* Remove hífen automático */
   word-break: normal;
 }
@@ -198,7 +197,7 @@ footer {
 .tally-embed-wrapper {
   width: 100%;
   height: 100%;
-  max-width: clamp(320px, 80%, 500px);
+  max-width: clamp(320px, 80%, 500px);  /* largura mínima, ideal e máxima */
   margin: 0 auto;
 }
 
@@ -221,10 +220,10 @@ footer {
     margin: 10px 0;
   }
 
-  .texto-bg {
-    padding: 20px; /* Mais conforto em smartphones */
+  .texto-bg,
+  form {
+    padding: 20px;
     width: 95%;
-    max-width: 90vw; /* Evita que o texto encoste nas bordas */
   }
 
   input, textarea {
@@ -236,8 +235,7 @@ footer {
   }
 
   .overlay-text {
-    padding: 16px 20px;
-    max-width: 90vw;
+    padding: 16px;
   }
 
   section.parallax {
