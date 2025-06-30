@@ -73,7 +73,7 @@ section.parallax {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 10px;
-  max-width: 95%;
+  max-width: 90vw;
 }
 
 h1, h2, h3 {
@@ -87,15 +87,20 @@ section.content-section {
   padding: 100px 80px 60px;
 }
 
+/* 🔧 Ajustes da largura e visual do bloco de texto nas seções "Quem Somos" e "Serviços" */
 .texto-bg {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 24px; /* Aumentado para conforto em mobile */
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
   border-radius: 10px;
-  max-width: 95%; /* Aumenta a largura do texto */
+
+  max-width: 90vw;         /* ✅ mais próximo da largura do banner */
   margin: auto;
-  text-align: left; /* Removido justify */
-  hyphens: none; /* Remove hífen automático */
-  word-break: normal;
+
+  text-align: left;         /* ✅ texto alinhado à esquerda */
+  hyphens: none;            /* ✅ remove hífens automáticos */
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: break-word;
 }
 
 /* Formulários */
@@ -235,7 +240,7 @@ footer {
   }
 
   .overlay-text {
-    padding: 16px;
+    padding: 10px;
   }
 
   section.parallax {
