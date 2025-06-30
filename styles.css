@@ -220,8 +220,7 @@ footer {
     margin: 10px 0;
   }
 
-  .texto-bg,
-  form {
+  .texto-bg {
     padding: 20px; /* Mais conforto em smartphones */
     width: 95%;
     max-width: 90vw; /* Evita que o texto encoste nas bordas */
