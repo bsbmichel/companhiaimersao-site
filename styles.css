@@ -137,14 +137,6 @@ section h2 {
   -moz-hyphens: none;
 }
 
-@media (min-width: 1024px) {
-  #quem-somos, #servicos, #contato {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-}
-
 @media (min-width: 768px) {
   .section-box {
     max-width: 800px;
