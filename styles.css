@@ -116,7 +116,7 @@ section h2 {
 }
 .overlay-text {
   background-color: rgba(0, 0, 0, 0.5); /* fundo preto com transparência */
-  padding: 100px 20px 60px;
+  padding: 20px 30px;
   border-radius: 12px;
   display: inline-block;
   text-align: center;
