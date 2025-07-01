@@ -10,10 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
 
-  <!-- Scripts com defer -->
+  <!-- Script principal com defer (executa após o HTML estar pronto) -->
   <script src="scripts.js" defer></script>
-  <script src="https://unpkg.com/scrollreveal" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" defer></script>
 </head>
 <body>
 
@@ -30,7 +28,7 @@
   <!-- Menu de navegação -->
   <nav>
     <div id="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></div>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="#sobre">Quem Somos</a>
       <a href="#servicos">Serviços</a>
       <a href="#galeria">Galeria</a>
@@ -129,6 +127,10 @@
       Desenvolvido por Kampello Tech &middot; Todos os direitos reservados
     </p>
   </footer>
+
+  <!-- Scripts externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
 
 </body>
 </html>
