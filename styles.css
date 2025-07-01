@@ -151,8 +151,10 @@ ul {
 /* Galeria com carrossel Glide.js */
 .glide__slide img {
   width: 100%;
-  height: auto;
+  height: auto; /* mantém proporção */
   max-width: 100%;
+  max-height: 80vh; /* limita altura para caber na tela */
+  object-fit: contain;
   border-radius: 12px;
   display: block;
   margin: 0 auto;
