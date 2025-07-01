@@ -8,7 +8,7 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css" />
 </head>
 <body>
 
@@ -66,22 +66,22 @@
     </div>
   </section>
 
-  <!-- Seção Galeria -->
+  <!-- Seção Galeria com Glide.js -->
   <section id="galeria">
     <h2>Galeria</h2>
-    <div class="gallery">
-      <a href="images/michael.png" data-lightbox="galeria" data-title="Michael Jackson">
-        <img src="images/michael.png" alt="Michael Jackson">
-      </a>
-      <a href="images/bruno.png" data-lightbox="galeria" data-title="Bruno Mars">
-        <img src="images/bruno.png" alt="Bruno Mars">
-      </a>
-      <a href="images/marilynmonroe.png" data-lightbox="galeria" data-title="Marilyn Monroe">
-        <img src="images/marilynmonroe.png" alt="Marilyn Monroe">
-      </a>
-      <a href="images/curinga.png" data-lightbox="galeria" data-title="Curinga">
-        <img src="images/curinga.png" alt="Curinga">
-      </a>
+    <div class="glide fade-in-on-scroll">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide"><img src="images/michael.png" alt="Michael Jackson" /></li>
+          <li class="glide__slide"><img src="images/bruno.png" alt="Bruno Mars" /></li>
+          <li class="glide__slide"><img src="images/marilynmonroe.png" alt="Marilyn Monroe" /></li>
+          <li class="glide__slide"><img src="images/curinga.png" alt="Curinga" /></li>
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#8592;</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#8594;</button>
+      </div>
     </div>
   </section>
 
@@ -89,10 +89,10 @@
   <section id="contato" class="parallax content-section" style="background-image: url('images/banner_contato.png');">
     <div class="section-box fade-in-on-scroll">
       <h2>Contato</h2>
-      <form id="contato-form" method="post" action="https://script.google.com/macros/s/AKfycbyA7TOKl-lkOMXQ3jAUrCjaUmnB4XzI39IJqWa1Pde0RDV0k7wNvb3Lq7PNty7_ZJeq/exec" target="hidden_iframe">
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu e‑mail" required>
-        <input type="tel" name="telefone" placeholder="Seu telefone" required>
+      <form id="contato-form" method="post" action="https://script.google.com/macros/s/YOUR-SCRIPT-ID/exec" target="hidden_iframe">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <input type="tel" name="telefone" placeholder="Seu telefone" required />
         <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
         <button type="submit" class="button">Enviar</button>
       </form>
@@ -104,30 +104,18 @@
   <!-- Seção Trabalhe Conosco -->
   <section id="trabalhe" class="parallax full-height" style="background-image: url('images/banner_trabalhe.png');">
     <div class="tally-embed-wrapper">
-      <iframe
-        src="https://tally.so/r/3lXWqv?transparentBackground=1"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        title="Formulário Trabalhe Conosco"
-        allowfullscreen
-        loading="lazy"
-        class="tally-iframe">
-      </iframe>
+      <iframe src="https://tally.so/r/3lXWqv?transparentBackground=1" width="100%" height="100%" frameborder="0" title="Formulário Trabalhe Conosco" allowfullscreen loading="lazy" class="tally-iframe"></iframe>
     </div>
   </section>
 
   <!-- Rodapé -->
   <footer>
-    <p>
-      &copy; 2024 Companhia Imersão | Produção Cultural – Brasília/DF &middot;
-      Desenvolvido por Kampello Tech &middot; Todos os direitos reservados
-    </p>
+    <p>&copy; 2024 Companhia Imersão | Produção Cultural – Brasília/DF &middot; Desenvolvido por Kampello Tech &middot; Todos os direitos reservados</p>
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="scripts.js" defer></script>  
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js" defer></script>
+  <script src="https://unpkg.com/scrollreveal" defer></script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>
