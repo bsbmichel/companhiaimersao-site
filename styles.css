@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset básico */ 
 * {
   margin: 0;
   padding: 0;
@@ -130,9 +130,11 @@ section h2 {
   color: white;
   text-align: start;
   line-height: 1.6;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
 }
 
-/* Ajuste de largura para desktop */
 @media (min-width: 768px) {
   .section-box {
     max-width: 800px;
@@ -146,36 +148,38 @@ ul {
   text-align: start;
 }
 
-/* Galeria como carrossel */
-.glide {
-  max-width: 960px;
+/* Galeria com carrossel Glide.js */
+.glide__slide img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
   margin: 0 auto;
 }
 
-.glide__slide img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 12px;
+@media (max-width: 768px) {
+  .glide__slide img {
+    max-height: 400px;
+  }
 }
 
-/* Navegação do carrossel */
 .glide__arrows {
   display: flex;
   justify-content: center;
+  gap: 10px;
   margin-top: 20px;
-  gap: 20px;
 }
 
 .glide__arrow {
   background-color: orange;
   border: none;
-  padding: 10px 20px;
-  color: black;
+  padding: 10px 16px;
   font-weight: bold;
+  font-size: 18px;
+  color: black;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .glide__arrow:hover {
