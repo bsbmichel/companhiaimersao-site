@@ -1,5 +1,3 @@
-console.log("Testando Lightbox:", typeof lightbox); // Deve dar "object"
-
 document.addEventListener("DOMContentLoaded", () => {
   // Rolagem suave ao clicar nos links do menu
   document.querySelectorAll('nav a').forEach(link => {
@@ -16,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Toggle do menu mobile (hamburguer)
+  // Toggle do menu mobile (ícone hamburguer)
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
   if (menuToggle && navLinks) {
@@ -25,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Fade-in com ScrollReveal
+  // Animações com ScrollReveal (se disponível)
   if (typeof ScrollReveal !== "undefined") {
     ScrollReveal().reveal('.fade-in-on-scroll', {
       delay: 200,
@@ -37,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Animação fade-in alternativa (caso ScrollReveal falhe)
+  // Fallback para fade-in com IntersectionObserver
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Validação de formulário + feedback visual
+  // Validação do formulário de contato
   const contatoForm = document.getElementById('contato-form');
   const iframe = document.getElementById('hidden_iframe');
   let submitted = false;
@@ -80,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       if (!emailValido.test(email)) {
-        alert("Digite um e‑mail válido.");
+        alert("Digite um e-mail válido.");
         e.preventDefault();
         return;
       }
@@ -97,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Glide.js (opcional - se ativar carrossel futuramente)
+  // Ativação do carrossel com Glide.js
   if (typeof Glide !== "undefined" && document.querySelector('.glide')) {
     new Glide('.glide', {
       type: 'carousel',
