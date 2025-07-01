@@ -108,6 +108,7 @@ section h2 {
   font-size: 2.5em;
   color: orange;
   margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .banner p {
