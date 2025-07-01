@@ -1,6 +1,4 @@
-// Aguarda o carregamento completo do DOM
 document.addEventListener("DOMContentLoaded", () => {
-
   // Rolagem suave ao clicar nos links do menu
   document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', e => {
@@ -10,22 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
         destino.scrollIntoView({ behavior: 'smooth' });
       }
 
-      // Fecha o menu mobile após clicar (caso esteja aberto)
-      document.querySelector('nav').classList.remove('open');
-      document.getElementById('nav-links').classList.remove('active');
+      // Fecha o menu mobile após clicar
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.remove("active");
     });
   });
 
-  // Menu mobile com botão "hambúrguer"
-  const menuToggle = document.getElementById('menu-toggle');
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-      document.querySelector('nav').classList.toggle('open');
+  // Toggle do menu mobile (hamburguer)
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
   }
 
-  // ScrollReveal - animações ao rolar a página
-  if (typeof ScrollReveal !== 'undefined') {
+  // Fade-in com ScrollReveal
+  if (typeof ScrollReveal !== "undefined") {
     ScrollReveal().reveal('.fade-in-on-scroll', {
       delay: 200,
       distance: '50px',
@@ -36,9 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Lightbox2 já funciona por padrão com data-lightbox nos <a>
+  // Animação fade-in alternativa (caso ScrollReveal falhe)
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
-  // Validação de formulário de contato + sucesso
+  document.querySelectorAll('.fade-in-on-scroll').forEach(element => {
+    if (!element.classList.contains('visible')) {
+      observer.observe(element);
+    }
+  });
+
+  // Validação de formulário + feedback visual
   const contatoForm = document.getElementById('contato-form');
   const iframe = document.getElementById('hidden_iframe');
   let submitted = false;
@@ -82,4 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Glide.js (opcional - se ativar carrossel futuramente)
+  if (typeof Glide !== "undefined" && document.querySelector('.glide')) {
+    new Glide('.glide', {
+      type: 'carousel',
+      perView: 1,
+      autoplay: 5000,
+      hoverpause: true,
+      animationDuration: 800
+    }).mount();
+  }
 });
