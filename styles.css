@@ -152,7 +152,7 @@ ul {
 .glide__slide img {
   width: 100%;
   height: auto; /* mantém proporção */
-  max-width: 100%;
+  max-width: 600px;
   max-height: 80vh; /* limita altura para caber na tela */
   object-fit: contain;
   border-radius: 12px;
