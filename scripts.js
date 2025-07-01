@@ -1,3 +1,5 @@
+console.log("Testando Lightbox:", typeof lightbox); // Deve dar "object"
+
 document.addEventListener("DOMContentLoaded", () => {
   // Rolagem suave ao clicar nos links do menu
   document.querySelectorAll('nav a').forEach(link => {
