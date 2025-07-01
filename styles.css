@@ -205,26 +205,27 @@ ul {
 }
 
 /* Formulário de contato */
-form input, form textarea {
-  width: 100%;
+form input,
+form textarea {
+  background-color: transparent; /* fundo transparente */
+  color: white;                  /* texto branco */
+  border: 1px solid white;       /* borda branca */
   padding: 12px;
-  margin-bottom: 10px;
-  border: none;
+  width: 100%;
+  margin-bottom: 15px;
   border-radius: 8px;
+  font-size: 1em;
+  outline: none;
 }
 
-form button {
-  background-color: orange;
-  color: black;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* placeholder levemente translúcido */
 }
 
-form button:hover {
-  background-color: darkorange;
+form input:focus,
+form textarea:focus {
+  border-color: orange; /* destaque ao focar */
 }
 
 /* Rodapé */
