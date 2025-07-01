@@ -99,26 +99,27 @@ section h2 {
 }
 
 /* Banner principal */
-.banner {
-  padding: 100px 20px 60px;
-  text-align: center;
-}
-
 .banner h1, .banner h2 {
   font-size: 2.5em;
   color: orange;
-  margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px; /* menor espaço entre título e parágrafo */
+  background-color: transparent; /* <-- REMOVER o fundo escuro daqui */
 }
-
 .banner p {
   font-size: 1.1em;
   color: white;
   max-width: 800px;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 16px;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent; /* <-- REMOVER fundo daqui também */
+}
+.overlay-text {
+  background-color: rgba(0, 0, 0, 0.5); /* fundo preto com transparência */
+  padding: 20px 30px;
   border-radius: 12px;
+  display: inline-block;
+  text-align: center;
 }
 
 /* Conteúdo centralizado com fundo semitransparente */
