@@ -234,7 +234,7 @@ form textarea:focus {
 form button,
 form input[type="submit"] {
   background-color: orange;
-  color: white;
+  color: black;
   border: none;
   padding: 12px 24px;
   border-radius: 8px;
