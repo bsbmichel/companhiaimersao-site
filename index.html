@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-  <!-- Script principal com defer (executa após o HTML estar pronto) -->
-  <script src="scripts.js" defer></script>
 </head>
 <body>
 
@@ -18,7 +16,7 @@
   <section class="banner parallax" id="home" style="background-image: url('images/banner_home.png');">
     <div class="banner-text fade-in-on-scroll">
       <div class="overlay-text">
-        <h1>COMPANHIA IMERSÃO</h1>
+        <h2>COMPANHIA IMERSÃO</h2>
         <p>PRODUÇÃO CULTURAL COM PERSONAGENS ICÔNICOS PARA EVENTOS INESQUECÍVEIS</p>
       </div>
     </div>
@@ -126,8 +124,10 @@
       Desenvolvido por Kampello Tech &middot; Todos os direitos reservados
     </p>
   </footer>
-  <!-- Scripts externos -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" defer></script>
-  <script src="https://unpkg.com/scrollreveal" defer></script>
+
+  <!-- Scripts (na ordem correta) -->
+  <script src="scripts.js" defer></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
