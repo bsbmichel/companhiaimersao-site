@@ -104,9 +104,10 @@ section h2 {
 .banner h1, .banner h2 {
   font-size: 2em;
   color: orange;
-  margin-bottom: 10px; /* menor espaço entre título e parágrafo */
-  background-color: transparent; /* <-- REMOVER o fundo escuro daqui */
+  margin-bottom: 10px;
+  background-color: transparent;
 }
+
 .banner p {
   font-size: 1.1em;
   color: white;
@@ -114,10 +115,11 @@ section h2 {
   margin: 0 auto;
   padding: 0;
   border-radius: 0;
-  background-color: transparent; /* <-- REMOVER fundo daqui também */
+  background-color: transparent;
 }
+
 .overlay-text {
-  background-color: rgba(0, 0, 0, 0.5); /* fundo preto com transparência */
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px 30px;
   border-radius: 12px;
   display: inline-block;
@@ -132,7 +134,7 @@ section h2 {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   color: white;
-  text-align: start;
+  text-align: justify; /* ← TEXTO JUSTIFICADO */
   line-height: 1.6;
   hyphens: none;
   -webkit-hyphens: none;
@@ -155,9 +157,9 @@ ul {
 /* Galeria com carrossel Glide.js */
 .glide__slide img {
   width: 100%;
-  height: auto; /* mantém proporção */
+  height: auto;
   max-width: 600px;
-  max-height: 80vh; /* limita altura para caber na tela */
+  max-height: 80vh;
   object-fit: contain;
   border-radius: 12px;
   display: block;
@@ -207,9 +209,9 @@ ul {
 /* Formulário de contato */
 form input,
 form textarea {
-  background-color: transparent; /* fundo transparente */
-  color: white;                  /* texto branco */
-  border: 1px solid white;       /* borda branca */
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
   padding: 12px;
   width: 100%;
   margin-bottom: 15px;
@@ -220,12 +222,30 @@ form textarea {
 
 form input::placeholder,
 form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.7); /* placeholder levemente translúcido */
+  color: rgba(255, 255, 255, 0.7);
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: orange; /* destaque ao focar */
+  border-color: orange;
+}
+
+/* BOTÃO LARANJA NO PADRÃO DA PÁGINA */
+form button,
+form input[type="submit"] {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background-color: #e69500;
 }
 
 /* Rodapé */
