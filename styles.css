@@ -1,10 +1,11 @@
-/* Reset básico */ 
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corpo da página */
 body {
   font-family: Arial, sans-serif;
   color: #fff;
@@ -12,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Header / topo do site */
+/* Cabeçalho */
 header {
   background-color: #222;
   padding: 10px;
@@ -32,6 +33,7 @@ nav {
   border-bottom: 2px solid orange;
 }
 
+/* Ícone do menu mobile */
 #menu-toggle {
   display: none;
   font-size: 1.5em;
@@ -39,6 +41,7 @@ nav {
   cursor: pointer;
 }
 
+/* Links do menu */
 .nav-links {
   display: flex;
   flex-direction: row;
@@ -59,7 +62,7 @@ nav {
   color: #fff;
 }
 
-/* Menu mobile */
+/* Responsividade do menu mobile */
 @media (max-width: 768px) {
   #menu-toggle {
     display: block;
@@ -98,10 +101,20 @@ section h2 {
   font-size: 2em;
   margin-bottom: 20px;
   color: orange;
+  text-align: center;
+}
+
+/* Estilo específico do h2 "Trabalhe Conosco" */
+section h2.trabalhe-titulo {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 8px;
 }
 
 /* Banner principal */
-.banner h1, .banner h2 {
+.banner h1,
+.banner h2 {
   font-size: 2em;
   color: orange;
   margin-bottom: 10px;
@@ -118,12 +131,21 @@ section h2 {
   background-color: transparent;
 }
 
+/* Centraliza todo o bloco de texto dentro do banner */
+.banner-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Caixa com fundo escuro transparente para destacar o texto do banner */
 .overlay-text {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px 30px;
   border-radius: 12px;
   display: inline-block;
-  text-align: justify;
+  text-align: center;
 }
 
 /* Conteúdo centralizado com fundo semitransparente */
@@ -134,20 +156,19 @@ section h2 {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   color: white;
-  text-align: justify; /* ← TEXTO JUSTIFICADO */
+  text-align: justify; /* Justifica o conteúdo das seções */
   line-height: 1.6;
   hyphens: none;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
 }
 
+/* Limita largura em telas maiores */
 @media (min-width: 768px) {
   .section-box {
     max-width: 800px;
   }
 }
 
-/* Estilo para listas */
+/* Listas */
 ul {
   list-style: disc inside;
   padding-left: 0;
@@ -172,6 +193,7 @@ ul {
   }
 }
 
+/* Botões de navegação do carrossel */
 .glide__arrows {
   display: flex;
   justify-content: center;
@@ -194,7 +216,7 @@ ul {
   background-color: darkorange;
 }
 
-/* Fade-in ao rolar */
+/* Animação de fade-in ao rolar */
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -230,7 +252,7 @@ form textarea:focus {
   border-color: orange;
 }
 
-/* BOTÃO LARANJA NO PADRÃO DA PÁGINA */
+/* Botões do formulário com padrão da página */
 form button,
 form input[type="submit"] {
   background-color: orange;
