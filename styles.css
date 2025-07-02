@@ -238,7 +238,6 @@ ul {
   font-size: 1.6em;
   margin-bottom: 30px;
   line-height: 1.5;
- /* background-color: rgba(0, 0, 0, 0.5); */
   display: inline-block;
   padding: 20px 30px;
   border-radius: 12px;
@@ -252,25 +251,40 @@ ul {
   font-weight: bold;
 }
 
-/* Ícones das redes sociais */
+/* Ícones das redes sociais com texto */
 .redes-icones {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
   margin-top: 20px;
 }
 
-.redes-icones a {
+.rede-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.rede-item a {
   font-size: 2.8em;
   color: white;
   transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.redes-icones a:hover {
+.rede-item a:hover {
   transform: scale(1.15);
   color: orange;
   text-shadow: 0 0 10px orange;
 }
+
+.nome-rede {
+  margin-top: 8px;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+}
+
 
 /* Formulário de contato */
 form input,
